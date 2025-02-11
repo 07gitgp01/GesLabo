@@ -1,0 +1,73 @@
+/* Style général du header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3F51B5; /* Couleur primaire */
+  color: #fff; /* Couleur du texte */
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Section logo */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 25%;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Section des actions */
+.actions-section {
+  display: flex;
+  align-items: center;
+}
+
+.btn.subscription {
+  background-color: #00bcd4; /* Couleur du bouton */
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.btn.subscription:hover {
+  background-color: #0097a7; /* Couleur au survol */
+}
+
+.user-name {
+  margin-right: 10px;
+}
+
+.user-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Icônes */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #00bcd4; /* Couleur au survol */
+}

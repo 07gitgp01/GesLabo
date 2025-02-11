@@ -1,0 +1,45 @@
+.ctn{
+    margin: 100px;
+  }
+  .ticket-icon {
+  color: #ff5722; /* Couleur orange */
+  font-size: 36px; /* Taille personnalisée */
+  }
+  .client-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 100px;
+  }
+  
+  /* Style des en-têtes du tableau */
+  .client-list th {
+    padding: 10px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    /* border: none; */
+  }
+  .client-list td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  button{
+  margin-left: 5px;
+  }
+  
+  #actionButton1{
+  /* font-size: 10px; */
+  color: green;
+  margin: 2px;
+  }
+  #actionButton2{
+    font-size: 10px;
+    color: red;
+    margin: 2px;
+}
+  

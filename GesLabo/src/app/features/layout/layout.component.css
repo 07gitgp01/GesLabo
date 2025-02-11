@@ -1,0 +1,43 @@
+
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+mat-drawer-container{
+    height: 100%;
+}
+
+#sidenav{
+    background-color: #4758B8;
+    width: 12%;
+    padding-top: 20px;
+}
+.sidenavtopbottom {
+    width: 99%;
+    height: 100%;
+    /* background-color: rgb(95, 137, 236); */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    /* margin-top: 10px; */
+}
+
+.sidenavBottom{
+    border-top: 3px solid #4758B8;    
+    border-radius: 10px 10px;
+    z-index: 9999;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+mat-list-item :hover {
+    /* background-color: rgb(95, 137, 236); */
+    background-color: #4758B8;
+    margin: 10px;
+}
+
+mat-drawer-content{
+    padding:40px;
+
+}

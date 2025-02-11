@@ -1,0 +1,100 @@
+
+<mat-toolbar color="" class="mat-elevation-z8 fixed-top">
+    <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span style="font-size: 1.5rem;">Tick-M</span>
+    <span class="example-spacer"></span>
+    <button routerLink="/dashboard" mat-button>Home
+        <mat-icon>home</mat-icon>
+    </button>
+    <button style="background-color: rgb(0, 255, 191);" routerLink="#" mat-button>Abonnement
+        <mat-icon>star</mat-icon>
+    </button>
+    
+    <button (click)="badgevisibility()"  mat-icon-button>
+        <mat-icon matBadgeColor="accent" matBadge="15" matBadgeHidden="badgevisible" matBadgeSize="large">notifications</mat-icon>
+    </button>
+    <button (click)="badgevisibility()"  mat-icon-button>
+        <mat-icon matBadgeColor="people" matBadge="15" matBadgeHidden="badgevisible" matBadgeSize="large" alt="User">people</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-drawer-container autosize class="mt-5">
+    <mat-drawer id="sidenav" #drawer opened="true" mode="side" position="start">
+        <mat-nav-list class="sidenavtopbottom">
+
+            <div class="sidenavTop" position="page-top">
+                <mat-list-item>
+                    <button routerLink="/dashboard" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button routerLink="/employers/employer-liste" mat-button><mat-icon>people</mat-icon>Employers </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button routerLink="/tickets/ticket-list" mat-button><mat-icon>confirmation_number</mat-icon>Tickets</button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button routerLink="/clients/client-list" mat-button><mat-icon>person</mat-icon>Clients</button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button routerLink="/task/task-list" mat-button><mat-icon>confirmation_number</mat-icon>Tâches</button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button routerLink="/toDo/toDo-list" mat-button><mat-icon>confirmation_number</mat-icon>A faire</button>
+                </mat-list-item>
+                
+                <mat-list-item>
+                    <button mat-button><mat-icon>analytics</mat-icon> Analytics</button>
+                </mat-list-item>
+            </div>
+            <span class="example-spacer"></span>
+
+            <div class="sidenavBottom" position="page-bottom" mat-elevation-z8>
+                <mat-list-item>
+                    <button mat-button><mat-icon>settings</mat-icon>Settings</button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-button><mat-icon>help</mat-icon> Help</button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button routerLink="" mat-button><mat-icon>logout</mat-icon> Log out</button>
+                </mat-list-item>
+            </div>
+
+        </mat-nav-list>
+
+    </mat-drawer>
+    <mat-drawer-content>
+        <!-- <div style="height: 600px;"> -->
+
+            <router-outlet></router-outlet>
+        <!-- </div> -->
+    </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+
+
+
+
+
+
+<!-- <app-connected-header></app-connected-header>
+<div class="container1">
+    <mat-drawer-container>
+        <mat-drawer mode="side" opened="True">
+            <app-sidenav></app-sidenav>
+        </mat-drawer>
+
+        <mat-drawer-content>
+            <div class="content contentElement">
+                <router-outlet> </router-outlet>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div> -->
+
+

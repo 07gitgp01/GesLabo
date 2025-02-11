@@ -1,0 +1,66 @@
+<div class="container">
+    <h2>Formulaire de Tâche</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div>
+            <label for="id">ID</label>
+            <input id="id" formControlName="id" type="text" />
+            <div *ngIf="form.get('id')?.touched && form.get('id')?.invalid">
+               Id est requis.
+            </div>
+        </div>
+
+        <div>
+            <label for="description">Description de la tâche</label>
+            <textarea id="description" formControlName="description"></textarea>
+            <div *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
+                La description est requise.
+            </div>
+        </div>
+
+        <div>
+            <label for="status">Statut de la tâche</label>
+            <select id="status" formControlName="status">
+                <option value="TO_DO">TO_DO</option>
+                <option value="IN_PROGRESS">IN_PROGRESS</option>
+                <option value="DONE">DONE</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="assignedTo">Affecté à</label>
+            <select id="assignedTo" formControlName="assignedTo">
+                <option value="">-- Aucune affectation --</option>
+                <option>paul</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="comments">Commentaires</label>
+            <input type="text" placeholder="Ajouter un commentaire" />
+
+        </div>
+
+        <div>
+            <label for="deadline">Date limite</label>
+            <input id="deadline" formControlName="deadline" type="date" />
+        </div>
+
+        <div>
+            <label for="creationDate">Date de création</label>
+            <input id="creationDate" formControlName="creationDate" type="date" />
+        </div>
+
+        <div>
+            <label for="completionDate">Date de complétion</label>
+            <input id="completionDate" formControlName="completionDate" type="date" />
+        </div>
+
+        <div>
+            <label for="lastUpdated">Dernière mise à jour</label>
+            <input id="lastUpdated" formControlName="lastUpdated" type="date" />
+        </div>
+
+        <button type="submit" [disabled]="form.invalid">Soumettre</button>
+    </form>
+</div>
