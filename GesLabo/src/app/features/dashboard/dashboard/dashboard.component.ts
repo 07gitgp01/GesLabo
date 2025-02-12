@@ -17,12 +17,12 @@ export class DashboardComponent implements OnInit {
       const textColor1 = documentStyle1.getPropertyValue('--text-color');
 
       this.datas = {
-          labels: ['A', 'B', 'C'],
+          labels: ['A', 'B', 'C', 'D'],
           datasets: [
               {
-                  data: [300, 50, 100],
-                  backgroundColor: [documentStyle1.getPropertyValue('--blue-500'), documentStyle1.getPropertyValue('--yellow-500'), documentStyle1.getPropertyValue('--green-500')],
-                  hoverBackgroundColor: [documentStyle1.getPropertyValue('--blue-400'), documentStyle1.getPropertyValue('--yellow-400'), documentStyle1.getPropertyValue('--green-400')]
+                  data: [300, 50, 100, 200],
+                  backgroundColor: [documentStyle1.getPropertyValue('--blue-500'), documentStyle1.getPropertyValue('--yellow-500'), documentStyle1.getPropertyValue('--green-500'), documentStyle1.getPropertyValue('--red-500')],
+                  hoverBackgroundColor: [documentStyle1.getPropertyValue('--blue-400'), documentStyle1.getPropertyValue('--yellow-400'), documentStyle1.getPropertyValue('--green-400'), documentStyle1.getPropertyValue('--red-400')]
               }
           ]
       };
@@ -47,7 +47,7 @@ export class DashboardComponent implements OnInit {
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
         this.data = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],
             datasets: [
                 {
                     type: 'bar',
@@ -66,7 +66,14 @@ export class DashboardComponent implements OnInit {
                     label: 'Dataset 3',
                     backgroundColor: documentStyle.getPropertyValue('--yellow-500'),
                     data: [41, 52, 24, 74, 23, 21, 32]
+                },
+                {
+                    type: 'bar',
+                    label: 'Dataset 4',
+                    backgroundColor: documentStyle.getPropertyValue('--red-500'),
+                    data: [41, 52, 24, 74, 23, 21, 32]
                 }
+                
             ]
         };
 

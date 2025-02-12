@@ -1,0 +1,19 @@
+.leftCol{
+    width: 70%;
+}
+.leftCol .leftColLeft{
+    width: 100%;
+}
+.leftCol .leftColRight{
+    width: 30%;
+}
+
+.rightCol{
+    width: 30%;
+}
+.rightCol .circular {
+    /* width: 50%; */
+}
+.rightCol .histogram {
+    /* width: 50%; */
+}

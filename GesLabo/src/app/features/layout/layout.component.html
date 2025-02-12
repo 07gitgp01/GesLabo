@@ -1,21 +1,24 @@
 
-<mat-toolbar color="" class="mat-elevation-z8 fixed-top">
+<mat-toolbar id="header" class="mat-elevation-z8 fixed-top">
+    <span style="font-size: 1.5rem;"><img src="/assets/images/logo/LabLogo.jpg" width="50px" alt="Logo" class="logo" /></span>
+    <span style="font-size: 1.5rem;" class="title">| GL</span>
+    <span class="example-spacer0"></span>
     <button (click)="drawer.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
-    <span style="font-size: 1.5rem;">Tick-M</span>
+    
     <span class="example-spacer"></span>
-    <button routerLink="/dashboard" mat-button>Home
+    <button  routerLink="/dashboard" mat-button alt="Home">Home
         <mat-icon>home</mat-icon>
     </button>
-    <button style="background-color: rgb(0, 255, 191);" routerLink="#" mat-button>Abonnement
+    <!-- <button style="background-color: rgb(0, 255, 191);" routerLink="#" mat-button alt="Home">Abonnement
         <mat-icon>star</mat-icon>
-    </button>
+    </button> -->
     
-    <button (click)="badgevisibility()"  mat-icon-button>
+    <button (click)="badgevisibility()"  mat-icon-button alt="Home">
         <mat-icon matBadgeColor="accent" matBadge="15" matBadgeHidden="badgevisible" matBadgeSize="large">notifications</mat-icon>
     </button>
-    <button (click)="badgevisibility()"  mat-icon-button>
+    <button (click)="badgevisibility()"  mat-icon-button alt="Home">
         <mat-icon matBadgeColor="people" matBadge="15" matBadgeHidden="badgevisible" matBadgeSize="large" alt="User">people</mat-icon>
     </button>
 </mat-toolbar>
@@ -28,25 +31,27 @@
                 <mat-list-item>
                     <button routerLink="/dashboard" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
                 </mat-list-item>
+                
                 <mat-list-item>
-                    <button routerLink="/employers/employer-liste" mat-button><mat-icon>people</mat-icon>Employers </button>
+                    <button routerLink="/labo/labo-list" mat-button><mat-icon>people</mat-icon>Laboratoire </button>
                 </mat-list-item>
                 <mat-list-item>
-                    <button routerLink="/tickets/ticket-list" mat-button><mat-icon>confirmation_number</mat-icon>Tickets</button>
+                    <button routerLink="/tickets/ticket-list" mat-button><mat-icon>view_module</mat-icon>Reservations</button>
                 </mat-list-item>
                 <mat-list-item>
-                    <button routerLink="/clients/client-list" mat-button><mat-icon>person</mat-icon>Clients</button>
+                    <button routerLink="/clients/client-list" mat-button><mat-icon>today</mat-icon>Calendrier</button>
                 </mat-list-item>
                 <mat-list-item>
                     <button routerLink="/task/task-list" mat-button><mat-icon>confirmation_number</mat-icon>Tâches</button>
                 </mat-list-item>
                 <mat-list-item>
-                    <button routerLink="/toDo/toDo-list" mat-button><mat-icon>confirmation_number</mat-icon>A faire</button>
+                    <button routerLink="/toDo/toDo-list" mat-button><mat-icon>notifications</mat-icon>Notifications</button>
                 </mat-list-item>
                 
                 <mat-list-item>
                     <button mat-button><mat-icon>analytics</mat-icon> Analytics</button>
                 </mat-list-item>
+                <hr>
             </div>
             <span class="example-spacer"></span>
 

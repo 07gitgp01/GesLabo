@@ -1,9 +1,25 @@
 /* Style général du header */
+.example-spacer{
+  flex: 1 1 auto;
+}
+#header{
+  background-color: #008000; /* Couleur primaire */
+  color: #fff; /* Couleur du texte */
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+#header .btn{
+  color: white;
+}
+#header .btn:hover{
+  color: #FFFF00;
+}
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3F51B5; /* Couleur primaire */
+  background-color: #008000; /* Couleur primaire */
   color: #fff; /* Couleur du texte */
   padding: 10px 20px;
   font-family: Arial, sans-serif;

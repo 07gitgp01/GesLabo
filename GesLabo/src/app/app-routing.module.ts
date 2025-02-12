@@ -19,7 +19,6 @@ const routes: Routes = [
       path: "", children: [
         { path: "auth", loadChildren: () => import('./features/authentification/authentification.module').then(m => m.AuthentificationModule) },
         { path: "home", loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule) },
-        { path: "achats", loadChildren: () => import('./features/achats/achats.module').then(m => m.AchatsModule) },
         { path: "task", loadChildren: () => import('./features/task/task.module').then(m => m.TaskModule) },
         { path: "messagerie",loadChildren:()=>import('./features/messagerie/messagerie.module').then(m=> m.MessagerieModule)},
         { path: "dashboard", loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)},

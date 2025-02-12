@@ -1,15 +1,28 @@
 <app-login *ngIf="displayAppLogin"  (towardHeaderOnClick)="recupLoginOnClick($event)"></app-login>
 
+<mat-toolbar id="header" class="mat-elevation-z8 fixed-top">
+  <span class="example-spacer0"></span>
+  <!-- <button (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+  </button> -->
+  
+  <span style="font-size: 1.5rem;"><img src="/assets/images/logo/LabLogo.jpg" width="50px" alt="Logo" class="logo" /></span>
+  <span style="font-size: 1.5rem;">| GL</span>
+  <span class="example-spacer"></span>
+  <button class="btn" (click)="onLoggedInClick(true)">Se connecter</button>
+  <button class="btn" (click)="onSignedUpClick(true)">S'inscrire</button>
+</mat-toolbar>
+
 <!-- header avant d'être connecté -->
 <header class="header" *ngIf="loginLoggedInValue1">
   <div class="logo-section">
     <img src="/assets/images/logo/logo.jpg" alt="Logo" class="logo" />
-    <a (click)="onHomeClick(false)">    <span class="title">| Mon Entreprise</span></a>
+    <a (click)="onHomeClick(false)">    <span class="title">| GL</span></a>
   </div>
 
   <div class="actions-section">
-    <button class="btn subscription" (click)="onLoggedInClick(true)">Se connecter</button>
-    <button class="btn subscription" (click)="onSignedUpClick(true)">S'inscrire</button>
+    <button class="btn danger" (click)="onLoggedInClick(true)">Se connecter</button>
+    <button class="btn success" (click)="onSignedUpClick(true)">S'inscrire</button>
   </div>
 </header>
 

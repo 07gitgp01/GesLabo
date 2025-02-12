@@ -10886,6 +10886,13 @@ app-header {
     padding: 0;
     border-radius: 100%;
   }
+
+
+
+
+  /* ////////////////////////////////////////    PARTIE CSS ///////////////////////////////////////
+  ///////////////////////////////////////////////////  NAV BAR  ////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////// */
   
   #mainNav {
     margin-top: 50px;
@@ -10917,7 +10924,7 @@ app-header {
     letter-spacing: 0.0625em;
   }
   #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc800;
+    color: #FFFF00;
   }
   
   @media (min-width: 992px) {
@@ -10955,13 +10962,17 @@ app-header {
       margin-right: 0;
     }
   }
+
+  /* ////////////////////////////  PARTIE CARROUSSEL COVER////////////////////////////////
+  ////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////// */
   header.masthead {
     padding-top: 10.5rem;
     padding-bottom: 6rem;
     text-align: center;
     color: #fff;
     /* background-image: url("/assets/bootstrap-homePage/assets/img/header-bg.png"); */
-    background-image: url("/assets/bootstrap-homePage/assets/img/cover.jpg");
+    background-image: url("/assets/bootstrap-homePage/assets/img/HomePageCover.png");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -11000,6 +11011,10 @@ app-header {
       margin-bottom: 4rem;
     }
   }
+
+  /* ////////////////////////////  PARTIE SERVICES////////////////////////////////
+  ////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////// */
   #portfolio .portfolio-item {
     max-width: 26rem;
     margin-left: auto;
@@ -11089,6 +11104,9 @@ app-header {
     opacity: 0.3;
   }
   
+  /* ////////////////////////////  PARTIE TEAM////////////////////////////////
+  ////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////// */
   .timeline {
     position: relative;
     padding: 0;
@@ -11102,7 +11120,7 @@ app-header {
     width: 2px;
     margin-left: -1.5px;
     content: "";
-    background-color: #e9ecef;
+    background-color: #FF0000;
   }
   .timeline > li {
     position: relative;
@@ -11273,7 +11291,9 @@ app-header {
   .img-brand {
     height: 2.75rem;
   }
-  
+  /* ////////////////////////////  PARTIE CONTACT////////////////////////////////
+  ////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////// */
   section#contact {
     background-color: #212529;
     background-image: url("/assets/bootstrap-homePage/assets/img/map-image.png");
