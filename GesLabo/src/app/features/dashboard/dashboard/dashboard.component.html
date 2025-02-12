@@ -64,7 +64,7 @@
         </div>
     </div>
 
-    <div class="d-flex flex-row col-12 col-md-12   ">
+    <div class="d-flex flex-row col-12 col-md-12 justify-content-between">
         <div class="leftCol ">
             <!--  project and team member start -->
             <div class="leftColLeft">
@@ -269,17 +269,17 @@
             </div>-->
         </div> 
 
-        <div class="rightCol d-flex flex-column align-items-end justify-content-center">
-            
+        <div class="rightCol d-flex flex-column align-items-end justify-content-end">
+            <!-- 1er diagramme circulaire -->
+            <div class="client-list card d-flex justify-content-center">
+                <p-chart type="doughnut" [data]="datas" [options]="optionss" />
+            </div>
             <!-- 2em diagramme histogragrammes -->
             <div class="histogram card">
                 <p-chart type="bar" [data]="data" [options]="options" />
             </div>
             <hr>
-            <!-- 1er diagramme circulaire -->
-            <div class="client-list card d-flex justify-content-center">
-                <p-chart type="doughnut" [data]="datas" [options]="optionss" />
-            </div>
+            
         </div>
     </div>
 

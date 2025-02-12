@@ -1,5 +1,5 @@
 .leftCol{
-    width: 70%;
+    width: 75%;
 }
 .leftCol .leftColLeft{
     width: 100%;
@@ -9,7 +9,7 @@
 }
 
 .rightCol{
-    width: 30%;
+    width: 25%;
 }
 .rightCol .circular {
     /* width: 50%; */
