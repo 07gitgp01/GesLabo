@@ -1,0 +1,73 @@
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar" [ngClass]="{'active': isSidebarActive}">
+    <h4 style="text-align: center;" class="text-white">SIG-RML</h4>
+    <div class="mb-4 text-center">
+        <img src="user.png" style="width: 150px; height: 150px;" class="rounded-circle" alt="User">
+        <h5 class="mt-2">Nom Utilisateur</h5>
+    </div>
+    
+    <nav class="nav flex-column">
+        <ul class="list-unstyled">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" onclick="toggleMenu(this)"><i class="fas fa-chart-bar"></i> Statistiques <i class="fas fa-chevron-right toggle-icon"></i></a>
+                <ul class="submenu list-unstyled">
+                    <li><a routerLink="/" class="nav-link" onclick="hideSidebar()">Rapports</a></li>
+                    <li><a routerLink="/tendances" class="nav-link" onclick="hideSidebar()">Tendances</a></li>
+                    <li><a routerLink="/analyses" class="nav-link" onclick="hideSidebar()">Analyses</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-cog"></i> Paramètres <i class="fas fa-chevron-right toggle-icon"></i></a>
+                <ul class="submenu list-unstyled">
+                    <li><a routerLink="/parametres/universites" class="nav-link" onclick="hideSidebar()">Universités</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-users"></i> Comptes <i class="fas fa-chevron-right toggle-icon"></i></a>
+                <ul class="submenu list-unstyled">
+                    <li><a routerLink="/comptes/utilisateurs" class="nav-link" onclick="hideSidebar()">Utilisateurs</a></li>
+                    <li><a routerLink="/comptes/droits" class="nav-link" onclick="hideSidebar()">Droits</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-box"></i> Stock <i class="fas fa-chevron-right toggle-icon"></i></a>
+                <ul class="submenu list-unstyled">
+                    <li><a routerLink="/stock/categories" class="nav-link" onclick="hideSidebar()">Catégories</a></li>
+                    <li><a routerLink="/stock/materiels" class="nav-link" onclick="hideSidebar()">Matériels</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-calendar-check"></i> Réservations <i class="fas fa-chevron-right toggle-icon"></i></a>
+                <ul class="submenu list-unstyled">
+                    <li><a routerLink="/reservations" class="nav-link" onclick="hideSidebar()">Réservations</a></li>
+                    <li><a routerLink="/reservations/demandes" class="nav-link" onclick="hideSidebar()">Demandes</a></li>
+                    <li><a routerLink="/reservations/historique" class="nav-link" onclick="hideSidebar()">Historique</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Content -->
+<div class="content" id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger px-3">
+        <!-- Bouton du menu -->
+        <button class="btn btn-outline-light" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    
+        <!-- Nom de l'application au centre -->
+        <div class=" text-white fw-bold fs-5 ms-3">
+           <span class="text-warning">SIG-RML</span>
+        </div>
+    
+        <!-- Icônes à droite -->
+        <div class="ms-auto d-flex align-items-center">
+            <button class="btn btn-outline-light me-3"><i class="fas fa-bell"></i></button>
+            <button class="btn btn-outline-light"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+    </nav>
+    
+    <router-outlet></router-outlet>
+
+</div>

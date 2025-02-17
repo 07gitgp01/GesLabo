@@ -28,27 +28,33 @@
         <mat-nav-list class="sidenavtopbottom">
 
             <div class="sidenavTop" position="page-top">
-                <mat-list-item>
-                    <button routerLink="/dashboard" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+                <mat-list-item class="bg-green-100 mb-1 list">
+                    <button routerLink="/dashboard" mat-button><mat-icon>analytics</mat-icon> Dashboard</button>
                 </mat-list-item>
                 
-                <mat-list-item>
-                    <button routerLink="/labo/labo-list" mat-button><mat-icon>people</mat-icon>Laboratoire </button>
+                <mat-list-item class="bg-green-100 mb-1">
+                    <button routerLink="/labo/labo-list"  mat-button><mat-icon>people</mat-icon>Utilisateurs </button>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item class="bg-green-100 mb-1">
+                    <button routerLink="/labo/labo-list" mat-button><mat-icon>dashboard</mat-icon>Laboratoire </button>
+                </mat-list-item>
+                <mat-list-item class="bg-green-100 mb-1">
+                    <button routerLink="/tickets/ticket-list" mat-button><mat-icon>view_module</mat-icon>Stock</button>
+                </mat-list-item>
+                <mat-list-item class="bg-green-100 mb-1">
                     <button routerLink="/tickets/ticket-list" mat-button><mat-icon>view_module</mat-icon>Reservations</button>
                 </mat-list-item>
-                <mat-list-item>
-                    <button routerLink="/clients/client-list" mat-button><mat-icon>today</mat-icon>Calendrier</button>
+                <mat-list-item class="bg-green-100 mb-1">
+                    <button routerLink="/clients/client-list" mat-button><mat-icon>today</mat-icon>Agenda</button>
                 </mat-list-item>
-                <mat-list-item>
+                <!-- <mat-list-item class="bg-green-100 mb-1">
                     <button routerLink="/task/task-list" mat-button><mat-icon>confirmation_number</mat-icon>Tâches</button>
-                </mat-list-item>
-                <mat-list-item>
-                    <button routerLink="/toDo/toDo-list" mat-button><mat-icon>notifications</mat-icon>Notifications</button>
+                </mat-list-item> -->
+                <mat-list-item class="bg-green-100 mb-1">
+                    <button routerLink="/toDo/toDo-list" mat-button><mat-icon>notifications</mat-icon>Messagerie</button>
                 </mat-list-item>
                 
-                <mat-list-item>
+                <mat-list-item class="bg-green-100 mb-1">
                     <button mat-button><mat-icon>analytics</mat-icon> Analytics</button>
                 </mat-list-item>
                 <hr>
@@ -77,10 +83,6 @@
         <!-- </div> -->
     </mat-drawer-content>
 </mat-drawer-container>
-
-
-
-
 
 
 

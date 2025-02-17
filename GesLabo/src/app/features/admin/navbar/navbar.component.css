@@ -1,0 +1,64 @@
+.nav-item .submenu {
+    display: none;
+    padding-left: 20px;
+}
+.nav-item.open .submenu {
+    display: block;
+}
+.toggle-icon {
+    float: right;
+    transition: transform 0.3s;
+}
+.nav-item.open .toggle-icon {
+    transform: rotate(90deg);
+}
+.breadcrumb {
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+.collapsed .breadcrumb {
+    margin-left: 0; /* Ajustez la marge lorsque la sidebar est réduite */
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 250px); /* Ajustez la largeur en fonction de la sidebar */
+    left: 250px; /* Alignez avec la sidebar */
+    z-index: 1050;
+    transition: all 0.3s;
+}
+.collapsed .navbar {
+    width: 100%; /* Ajustez la largeur lorsque la sidebar est réduite */
+    left: 0;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        left: -250px;
+        position: absolute;
+    }
+    .sidebar.active {
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1050;
+    }
+    .content {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 60px; /* Espace pour le header fixe */
+    }
+    .navbar {
+        width: 100%;
+        left: 0;
+        z-index: 1000;
+    }
+    .sidebar.active ~ .navbar {
+        display: none;
+    }
+    .breadcrumb {
+        margin-left: 0; /* Ajustez la marge pour les petits écrans */
+    }
+}

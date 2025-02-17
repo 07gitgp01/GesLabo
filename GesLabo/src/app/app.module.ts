@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './features/layout/layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminModule } from './features/admin/admin.module';
 
 
 @NgModule({
@@ -22,8 +23,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     SharedModule,
     LayoutModule,
+    AdminModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    
     
     
   ],

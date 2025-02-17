@@ -17,14 +17,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     AuthentificationRoutingModule,
-   FormsModule,
-   SharedModule
+    FormsModule,
+    SharedModule
   
   ],
   exports: [
     CommonModule,
     AuthentificationRoutingModule,
-   LoginComponent,
+    LoginComponent,
     SignupComponent
   ]
 })

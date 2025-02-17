@@ -5,15 +5,16 @@ import { SignupComponent } from './features/authentification/signup/signup.compo
 import { HomeComponent } from './features/home/home.component';
 import { LayoutComponent } from './features/layout/layout.component';
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
+import { AdminComponent } from './features/admin/admin.component';
 
 
 const routes: Routes = [
 
   {path: 'login/compte', component: LoginComponent},
   {path: 'new/signup', component: SignupComponent},
-  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
 
-  { path: "", component: LayoutComponent, children: [
+  { path: "Ticketing", component: LayoutComponent, children: [
     {
 
       path: "", children: [
@@ -30,6 +31,24 @@ const routes: Routes = [
       ]
     }
   ]
+},
+
+{ path: "", component: AdminComponent, children: [
+  {
+    path: "", children: [
+      { path: "", loadChildren:() => import ('./features/admin/components/statistiques/statistiques.module').then(m => m.StatistiquesModule)},
+      { path: "stock", loadChildren:() => import ('./features/admin/components/stock/stock.module').then(m => m.StockModule)},
+      { path: "reservations", loadChildren:() => import ('./features/admin/components/reservations/reservations.module').then(m => m.ReservationsModule)},
+      { path: "parametres", loadChildren:() => import ('./features/admin/components/parametres/parametres.module').then(m => m.ParametresModule)},
+      { path: "comptes", loadChildren:() => import ('./features/admin/components/comptes/comptes.module').then(m => m.ComptesModule)},
+      { path: 'error', component: PageNotFoundComponent},
+      { path: "**", redirectTo: "/error"},
+
+
+
+    ]
+  }
+]
 },
 
 ];
