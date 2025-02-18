@@ -1,1 +1,91 @@
-<p>materiels-liste works!</p>
+
+<!-- content body -->
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Stock</a></li>
+            <li class="breadcrumb-item"><a href="#">Matériels</a></li>
+            <!-- <li class="breadcrumb-item active" aria-current="page">Tableau de Bord</li> -->
+        </ol>
+    </nav>
+    <div class="container-fluid bg-white">
+        <p>Bienvenue sur l'interface des Matériels.</p>
+        <hr> 
+        <!-- Liste des materiels -->
+        <div class="row">
+            <h1 class="text-success">Liste des Materiels</h1> 
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <!-- Filtre avec icône -->
+                    <div class="input-group" style="max-width: 300px;">
+                        
+                        <input type="text" class="form-control" placeholder="Filtrer..." aria-label="Filtrer">
+                        <span class="input-group-text"><i class="fas fa-filter"></i></span>
+                    </div>
+                    <!-- Boutons d'action -->
+                    <div>
+                        <button class="btn btn-primary" routerLink="/reservations/ajout"><i class="fas fa-plus"></i> Nouveau</button>
+                        <button class="btn btn-secondary"><i class="fas fa-print"></i> Imprimer</button>
+                        <button class="btn btn-success"><i class="fas fa-file-export"></i> Exporter</button>
+                    </div>
+                </div>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Libellé</th>
+                            <th>Description</th>
+                            <th>Catégorie</th>
+                            <th>N°Serie</th>
+                            <th>Laboratoire</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Clavier</td>
+                            <td>Pour Ordinateur Portable</td>
+                            <td>Info</td>
+                            <td>N° 2023-10-15</td>
+                            <td>SEA</td>
+                            <td>
+                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>101</td>
+                            <td>Clavier</td>
+                            <td>Pour Ordinateur Portable</td>
+                            <td>Info</td>
+                            <td>N° 2023-10-15</td>
+                            <td>SEA</td>
+                            <td>
+                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>101</td>
+                            <td>Clavier</td>
+                            <td>Pour Ordinateur Portable</td>
+                            <td>Info</td>
+                            <td>N° 2023-10-15</td>
+                            <td>SEA</td>
+                            <td>
+                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+         <hr> 
+    </div>
+</div>

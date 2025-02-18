@@ -3,7 +3,7 @@
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Stock</a></li>
+            <li class="breadcrumb-item"><a routerLink="/stock/categories">Stock</a></li>
             <li class="breadcrumb-item"><a href="#">Catégories</a></li>
             <!-- <li class="breadcrumb-item active" aria-current="page">Tableau de Bord</li> -->
         </ol>
@@ -24,7 +24,7 @@
                     </div>
                     <!-- Boutons d'action -->
                     <div>
-                        <button class="btn btn-primary" routerLink="/reservations/ajout"><i class="fas fa-plus"></i> Nouveau</button>
+                        <button class="btn btn-primary" routerLink="/stock/ajout"><i class="fas fa-plus"></i> Nouveau</button>
                         <button class="btn btn-secondary"><i class="fas fa-print"></i> Imprimer</button>
                         <button class="btn btn-success"><i class="fas fa-file-export"></i> Exporter</button>
                     </div>
@@ -47,32 +47,29 @@
                             <td>Scientique SEA</td>
                             
                             <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-info btn-sm"><i routerLink="/stock/details" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/stock/modif" class="fas fa-edit"></i></button>
                                 <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                         <tr>
-                            <td>102</td>
-                            <td>Marie Curie</td>
-                            <td>Projecteur</td>
-                            <td>2023-10-14</td>
-                            <td><span class="badge bg-warning">En attente</span></td>
+                            <td>2</td>
+                            <td>physique</td>
+                            <td>Ufr SEA ,departement physique</td>
+                            
                             <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-info btn-sm"><i routerLink="/stock/details" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/stock/modif" class="fas fa-edit"></i></button>
                                 <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                         <tr>
-                            <td>103</td>
-                            <td>Pierre Durand</td>
+                            <td>3</td>
+                            <td>Informatique</td>
                             <td>Tablette Graphique</td>
-                            <td>2023-10-13</td>
-                            <td><span class="badge bg-danger">Annulée</span></td>
                             <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-info btn-sm"><i routerLink="/stock/details" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/stock/modif" class="fas fa-edit"></i></button>
                                 <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
