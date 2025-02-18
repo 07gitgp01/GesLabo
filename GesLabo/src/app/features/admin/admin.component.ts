@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AdminComponent {
 
+  subLink = false;
+
   isSidebarActive: boolean = false;
   menuItems = [
     {
@@ -26,10 +28,14 @@ export class AdminComponent {
 
   toggleSidebar() {
     this.isSidebarActive = !this.isSidebarActive;
+    if(this.isSidebarActive){
+      
+    }
   }
 
   toggleMenu(item: any) {
     item.open = !item.open;
+    this.subLink = ! this.subLink
   }
 
   hideSidebar() {

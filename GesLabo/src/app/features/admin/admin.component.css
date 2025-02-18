@@ -10,6 +10,14 @@ h2 {
     font-family: Georgia, serif;
     color: #00853E;
 }
+
+.content {
+    transition: width 0.3s; /* Pour une transition fluide */
+}
+
+.full-width {
+    width: 100%; /* Prendre toute la largeur quand la sidebar est cachée */
+}
 .sidebar {
     width: 250px;
     height: 100vh;

@@ -7,37 +7,51 @@
     </div>
     
     <nav class="nav flex-column">
+
+        <!-- <nav class="nav flex-column">
+            <ul class="list-unstyled">
+                <li class="nav-item" *ngFor="let item of menuItems">
+                    <a href="#" class="nav-link" (click)="toggleMenu(item)"><i class="{{item.icon}}"></i> {{item.title}} <i class="fas fa-chevron-right toggle-icon"></i></a>
+                    <ul class="submenu list-unstyled" *ngIf="subLink">
+                        <li *ngFor="let subItem of item.subItems">
+                            <a href="#" class="nav-link" (click)="hideSidebar()">{{subItem}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav> -->
+
         <ul class="list-unstyled">
             <li class="nav-item">
-                <a href="#" class="nav-link active" onclick="toggleMenu(this)"><i class="fas fa-chart-bar"></i> Statistiques <i class="fas fa-chevron-right toggle-icon"></i></a>
+                <a routerLink="#" class="nav-link active" onclick="toggleMenu(this)"><i class="fas fa-chart-bar"></i> Statistiques <i class="fas fa-chevron-right toggle-icon"></i></a>
                 <ul class="submenu list-unstyled">
                     <li><a routerLink="/" class="nav-link" onclick="hideSidebar()">Rapports</a></li>
                     <li><a routerLink="/tendances" class="nav-link" onclick="hideSidebar()">Tendances</a></li>
                     <li><a routerLink="/analyses" class="nav-link" onclick="hideSidebar()">Analyses</a></li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-cog"></i> Paramètres <i class="fas fa-chevron-right toggle-icon"></i></a>
+            <li class="nav-item active">
+                <a routerLink="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-cog"></i> Paramètres <i class="fas fa-chevron-right toggle-icon"></i></a>
                 <ul class="submenu list-unstyled">
                     <li><a routerLink="/parametres/universites" class="nav-link" onclick="hideSidebar()">Universités</a></li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-users"></i> Comptes <i class="fas fa-chevron-right toggle-icon"></i></a>
+            <li class="nav-item active">
+                <a routerLink="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-users"></i> Comptes <i class="fas fa-chevron-right toggle-icon"></i></a>
                 <ul class="submenu list-unstyled">
                     <li><a routerLink="/comptes/utilisateurs" class="nav-link" onclick="hideSidebar()">Utilisateurs</a></li>
                     <li><a routerLink="/comptes/droits" class="nav-link" onclick="hideSidebar()">Droits</a></li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-box"></i> Stock <i class="fas fa-chevron-right toggle-icon"></i></a>
+            <li class="nav-item active">
+                <a routerLink="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-box"></i> Stock <i class="fas fa-chevron-right toggle-icon"></i></a>
                 <ul class="submenu list-unstyled">
                     <li><a routerLink="/stock/categories" class="nav-link" onclick="hideSidebar()">Catégories</a></li>
                     <li><a routerLink="/stock/materiels" class="nav-link" onclick="hideSidebar()">Matériels</a></li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-calendar-check"></i> Réservations <i class="fas fa-chevron-right toggle-icon"></i></a>
+            <li class="nav-item active">
+                <a routerLink="#" class="nav-link" onclick="toggleMenu(this)"><i class="fas fa-calendar-check"></i> Réservations <i class="fas fa-chevron-right toggle-icon"></i></a>
                 <ul class="submenu list-unstyled">
                     <li><a routerLink="/reservations" class="nav-link" onclick="hideSidebar()">Réservations</a></li>
                     <li><a routerLink="/reservations/demandes" class="nav-link" onclick="hideSidebar()">Demandes</a></li>
@@ -49,10 +63,10 @@
 </div>
 
 <!-- Content -->
-<div class="content" id="content">
+<div class="content" id="content" >
     <nav class="navbar navbar-expand-lg navbar-light bg-danger px-3">
         <!-- Bouton du menu -->
-        <button class="btn btn-outline-light" id="menu-toggle">
+        <button class="btn btn-outline-light" (click)="toggleSidebar()" id="menu-toggle">
             <i class="fas fa-bars"></i>
         </button>
     
@@ -71,3 +85,5 @@
     <router-outlet></router-outlet>
 
 </div>
+<script src="./assets/gestLabo/index.js"></script>
+

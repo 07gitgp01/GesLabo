@@ -1,1 +1,99 @@
-<p>reservation-modif works!</p>
+
+<!-- content body -->
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/reservations">Reservations</a></li>
+            <li class="breadcrumb-item"><a href="#">Modifier</a></li>
+            <!-- <li class="breadcrumb-item active" aria-current="page">Tableau de Bord</li> -->
+        </ol>
+    </nav>
+    <div class="container-fluid bg-white">
+        <p>Bienvenue sur l'interface de modificationréservations.</p>
+        <hr> 
+        <div class="row pb-3">
+            <h2 class="text-success"><i class="fas fa-calendar-plus"></i> Modifier Réservation</h2>
+            <div class="col-md-12">
+                <form>
+                    <div class="row">
+                        <!-- Utilisateur -->
+                        <div class="col-md-6 mb-3">
+                            <label for="user" class="form-label"><i class="fas fa-user"></i> Utilisateur</label>
+                            <input type="text" class="form-control" id="user" placeholder="Nom complet" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="exemple@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Téléphone -->
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label"><i class="fas fa-phone"></i> Téléphone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Numéro de téléphone" required>
+                        </div>
+
+                        <!-- Matériel -->
+                        <div class="col-md-6 mb-3">
+                            <label for="equipment" class="form-label"><i class="fas fa-laptop"></i> Matériel</label>
+                            <select class="form-select" id="equipment" required>
+                                <option value="" disabled selected>Choisissez un matériel...</option>
+                                <option value="ordinateur">Ordinateur Portable</option>
+                                <option value="projecteur">Projecteur</option>
+                                <option value="tablette">Tablette Graphique</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Quantité -->
+                        <div class="col-md-6 mb-3">
+                            <label for="quantity" class="form-label"><i class="fas fa-sort-numeric-up"></i> Quantité</label>
+                            <input type="number" class="form-control" id="quantity" min="1" value="1" required>
+                        </div>
+
+                        <!-- Durée de réservation -->
+                        <div class="col-md-6 mb-3">
+                            <label for="duration" class="form-label"><i class="fas fa-clock"></i> Durée (en jours)</label>
+                            <input type="number" class="form-control" id="duration" min="1" value="1" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Date -->
+                        <div class="col-md-6 mb-3">
+                            <label for="date" class="form-label"><i class="fas fa-calendar-alt"></i> Date de réservation</label>
+                            <input type="date" class="form-control" id="date" required>
+                        </div>
+
+                        <!-- Statut -->
+                        <div class="col-md-6 mb-3">
+                            <label for="status" class="form-label"><i class="fas fa-info-circle"></i> Statut</label>
+                            <select class="form-select" id="status" required>
+                                <option value="confirmée" class="text-success">Confirmée</option>
+                                <option value="en attente" class="text-warning">En attente</option>
+                                <option value="annulée" class="text-danger">Annulée</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Remarques -->
+                    <div class="mb-3">
+                        <label for="remarks" class="form-label"><i class="fas fa-comment-dots"></i> Remarques</label>
+                        <textarea class="form-control" id="remarks" rows="3" placeholder="Ajoutez des remarques supplémentaires..."></textarea>
+                    </div>
+
+                    <!-- Boutons d'action -->
+                    <div class="d-flex justify-content-start gap-2">
+                        <button type="reset" class="btn btn-secondary"><i class="fas fa-times"></i> Annuler</button>
+                        <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
