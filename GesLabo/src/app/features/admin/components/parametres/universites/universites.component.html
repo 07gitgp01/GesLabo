@@ -1,1 +1,72 @@
-<p>universites works!</p>
+
+<!-- content body -->
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Parametres</a></li>
+            <li class="breadcrumb-item"><a href="#">Universités</a></li>
+            <!-- <li class="breadcrumb-item active" aria-current="page">Tableau de Bord</li> -->
+        </ol>
+    </nav>
+    <div class="container-fluid bg-white">
+        <p>Bienvenue sur l'interface de visualisation des universités.</p>
+        <hr> 
+        <!-- Liste des Universites -->
+        <div class="row">
+            <h1 class="text-success">Liste des Universites</h1> 
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <!-- Filtre avec icône -->
+                    <div class="input-group" style="max-width: 300px;">
+                        
+                        <input type="text" class="form-control" placeholder="Filtrer..." aria-label="Filtrer">
+                        <span class="input-group-text"><i class="fas fa-filter"></i></span>
+                    </div>
+                    <!-- Boutons d'action -->
+                    <div>
+                        <button class="btn btn-primary px-3" routerLink="/reservations/ajout"><i class="fas fa-plus"></i> Nouveau</button>
+                        <button class="btn btn-secondary"><i class="fas fa-print"></i> Imprimer</button>
+                        <button class="btn btn-success"><i class="fas fa-file-export"></i> Exporter</button>
+                    </div>
+                </div>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Logo</th>
+                            <th>Nom</th>
+                            <th>Adresse</th>
+                            <th>Email</th>
+                            <th>Tel</th>
+                            <th>Slogan</th>
+                            <th>Actif</th>
+                            <th>Supprimé</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let univ of liste; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td><img src="{{univ.logo}}" alt="Logo + {{univ.nom}}" style="width: 25px; border-radius: 15px;"></td>
+                            <td>{{univ.nom}}</td>
+                            <td>{{univ.adresse}}</td>
+                            <td>{{univ.email}}</td>
+                            <td>{{univ.telephone}}</td>
+                            <td>{{univ.slogan}}</td>
+                            <td><span class="badge bg-success">{{univ.is_active}}</span></td>
+                            <td>{{univ.deleted}}</td>
+                            <!-- <td><span class="badge bg-success">Confirmée</span></td> -->
+                            <td>
+                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+         <hr> 
+    </div>
+</div>

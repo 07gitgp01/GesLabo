@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { AdminSharedRoutingModule } from './admin-shared-routing.module';
 
@@ -8,7 +9,11 @@ import { AdminSharedRoutingModule } from './admin-shared-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    AdminSharedRoutingModule
+    AdminSharedRoutingModule,
+    SharedModule
+  ],
+  exports: [
+    SharedModule
   ]
 })
 export class AdminSharedModule { }

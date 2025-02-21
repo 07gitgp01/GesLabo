@@ -3,17 +3,17 @@
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Reservations</a></li>
-            <li class="breadcrumb-item"><a href="#">Liste</a></li>
+            <li class="breadcrumb-item"><a href="#">Stock</a></li>
+            <li class="breadcrumb-item"><a href="#">Matériels</a></li>
             <!-- <li class="breadcrumb-item active" aria-current="page">Tableau de Bord</li> -->
         </ol>
     </nav>
     <div class="container-fluid bg-white">
-        <p>Bienvenue sur l'interface de visualisation des réservations.</p>
+        <p>Bienvenue sur l'interface des Matériels.</p>
         <hr> 
-        <!-- Liste des dernières réservations -->
+        <!-- Liste des materiels -->
         <div class="row">
-            <h1 class="text-success">Liste des reservations</h1> 
+            <h1 class="text-success">Liste des Materiels</h1> 
             <div class="col-md-12">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <!-- Filtre avec icône -->
@@ -34,26 +34,30 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Utilisateur</th>
-                            <th>Matériel</th>
-                            <th>Date Reser</th>
-                            <th>Date Debut</th>
-                            <th>Date Fin</th>
-                            <th>Statut</th>
-                            <th>Retour</th>
+                            <!-- <th>Photo</th> -->
+                            <th>Libellé</th>
+                            <th>Description</th>
+                            <th>Catégorie</th>
+                            <th>N°Serie</th>
+                            <th>Etat</th>
+                            <th>Laboratoire</th>
+                            <th>Stock gle</th>
+                            <th>Notice</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let reserv of liste; let i = index">
+                        <tr *ngFor="let mat of liste; let i = index">
                             <td>{{i + 1}}</td>
-                            <td>{{reserv.user}}</td>
-                            <td>{{reserv.materiel}}</td>
-                            <td>{{reserv.date_reservation}}</td>
-                            <td>{{reserv.date_debut}}</td>
-                            <td>{{reserv.date_fin}}</td>
-                            <td><span class="badge bg-success">{{reserv.statut}}</span></td>
-                            <td><span class="badge bg-success">{{reserv.remis}}</span></td>
+                            <!-- <td>{{i + 1}}</td> -->
+                            <td>{{mat.nom}}</td>
+                            <td>{{mat.description}}</td>
+                            <td>{{mat.categorie}}</td>
+                            <td>{{mat.numero_serie}}</td>
+                            <td>{{mat.etat}}</td>
+                            <td>{{mat.laboratoire}}</td>
+                            <td>{{mat.est_stock_general}}</td>
+                            <td>{{mat.notice}}</td>
                             <td>
                                 <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
                                 <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
@@ -63,6 +67,7 @@
                     </tbody>
                 </table>
                 <p><span class="badge bg-danger">{{tabVide}}</span></p>
+
             </div>
         </div>
          <hr> 

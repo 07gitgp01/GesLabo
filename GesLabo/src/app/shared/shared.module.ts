@@ -43,6 +43,7 @@ import { DialogModule } from 'primeng/dialog';
 import { PanelModule } from 'primeng/panel';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ChartModule } from 'primeng/chart';
+// import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -53,6 +54,7 @@ import { ChartModule } from 'primeng/chart';
 @NgModule({
   declarations: [],
   imports: [
+    // NgChartsModule,
     ChartModule,
     MegaMenuModule,
     PanelModule,
@@ -96,6 +98,7 @@ import { ChartModule } from 'primeng/chart';
 
   ],
   exports: [
+    // NgChartsModule,
     ChartModule,
     MegaMenuModule,
     PanelModule,

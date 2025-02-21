@@ -6,6 +6,9 @@ import { StatistiquesListComponent } from './statistiques-list/statistiques-list
 import { RapportsComponent } from './rapports/rapports.component';
 import { TendancesComponent } from './tendances/tendances.component';
 import { AnalysesComponent } from './analyses/analyses.component';
+// import { AdminModule } from '../../admin.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 @NgModule({
@@ -13,11 +16,13 @@ import { AnalysesComponent } from './analyses/analyses.component';
     StatistiquesListComponent,
     RapportsComponent,
     TendancesComponent,
-    AnalysesComponent
+    AnalysesComponent,
   ],
   imports: [
     CommonModule,
-    StatistiquesRoutingModule
+    StatistiquesRoutingModule,
+    // AdminModule,
+    SharedModule
   ]
 })
 export class StatistiquesModule { }

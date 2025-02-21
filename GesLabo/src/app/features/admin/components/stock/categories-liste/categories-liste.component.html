@@ -41,32 +41,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Chimique</td>
-                            <td>Scientique SEA</td>
+                        <tr *ngFor="let cat of liste; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{cat.nom}}</td>
+                            <td>{{cat.description}}</td>
                             
-                            <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/stock/details" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/stock/modif" class="fas fa-edit"></i></button>
-                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>physique</td>
-                            <td>Ufr SEA ,departement physique</td>
-                            
-                            <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/stock/details" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/stock/modif" class="fas fa-edit"></i></button>
-                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Informatique</td>
-                            <td>Tablette Graphique</td>
                             <td>
                                 <button class="btn btn-info btn-sm"><i routerLink="/stock/details" class="fas fa-eye"></i></button>
                                 <button class="btn btn-warning btn-sm"><i routerLink="/stock/modif" class="fas fa-edit"></i></button>

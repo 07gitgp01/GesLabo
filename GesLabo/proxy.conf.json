@@ -1,0 +1,9 @@
+{
+    "/api": {
+      "target": "https://youssouf.pythonanywhere.com",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+  
