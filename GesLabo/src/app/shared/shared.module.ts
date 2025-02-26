@@ -44,7 +44,7 @@ import { PanelModule } from 'primeng/panel';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ChartModule } from 'primeng/chart';
 // import { ChartsModule } from 'ng2-charts';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -55,6 +55,8 @@ import { ChartModule } from 'primeng/chart';
   declarations: [],
   imports: [
     // NgChartsModule,
+    // ChartsModule,
+    MatProgressSpinnerModule,
     ChartModule,
     MegaMenuModule,
     PanelModule,
@@ -99,6 +101,7 @@ import { ChartModule } from 'primeng/chart';
   ],
   exports: [
     // NgChartsModule,
+    MatProgressSpinnerModule,
     ChartModule,
     MegaMenuModule,
     PanelModule,

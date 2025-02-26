@@ -40,7 +40,14 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
+                        <td colspan="4" class="text-center">
+                            <div class="spinner-container">
+                                <mat-spinner diameter="60"></mat-spinner> Chargement en cours ... <!-- Réduisez la taille ici -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tbody *ngIf="!loading && liste.length > 0">
                         <tr *ngFor="let cat of liste; let i = index">
                             <td>{{i + 1}}</td>
                             <td>{{cat.nom}}</td>

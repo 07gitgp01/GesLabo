@@ -1,1 +1,74 @@
-<p>materiels-details works!</p>
+<!-- content body -->
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/stock_materiels">Matériels</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Détails</li>
+        </ol>
+    </nav>
+    <div class="container-fluid bg-white">
+        <p>Bienvenue sur l'interface de visualisation du matériel.</p>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <!-- Filtre avec icône -->
+            <div class="input-group" style="max-width: 300px;">
+                
+                <input type="text" class="form-control" placeholder="Filtrer..." aria-label="Filtrer">
+                <span class="input-group-text"><i class="fas fa-filter"></i></span>
+            </div>
+            <!-- Boutons d'action -->
+            <div>
+                <button class="btn btn-primary" routerLink="/stock_materiels_ajout"><i class="fas fa-plus"></i> Nouveau</button>
+                <button class="btn btn-secondary"><i class="fas fa-print"></i> Imprimer</button>
+                <button class="btn btn-success"><i class="fas fa-file-export"></i> Exporter</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Détails du Matériel</h2>
+                <div class="mb-3">
+                    <strong>Nom :</strong>
+                    <p>{{ materiel.nom }}</p>
+                </div>
+                <div class="mb-3">
+                    <strong>Description :</strong>
+                    <p>{{ materiel.description }}</p>
+                </div>
+                <div class="mb-3">
+                    <strong>Catégorie :</strong>
+                    <p>{{ materiel.categorie }}</p>
+                </div>
+                <div class="mb-3">
+                    <strong>Numéro de série :</strong>
+                    <p>{{ materiel.numero_serie }}</p>
+                </div>
+                <div class="mb-3">
+                    <strong>État :</strong>
+                    <p>{{ materiel.etat }}</p>
+                </div>
+                <div class="mb-3">
+                    <strong>Laboratoire :</strong>
+                    <p>{{ materiel.laboratoire }}</p>
+                </div>
+                <div class="mb-3">
+                    <strong>Est un stock général :</strong>
+                    <p>{{ materiel.est_stock_general ? 'Oui' : 'Non' }}</p>
+                </div>
+                <div class="mb-3">
+                    <strong>Mode d'utilisation :</strong>
+                    <p>{{ materiel.notice }}</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Image du Matériel</h2>
+                <img *ngIf="materiel.image" [src]="materiel.image" alt="Image de {{ materiel.nom }}" class="img-fluid" />
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-start gap-2 mt-3">
+            <button class="btn btn-danger" (click)="deleteMateriel(materiel.id)"><i class="fas fa-trash"></i> Supprimer</button>
+            <button class="btn btn-secondary"><i routerLink="/stock_materiels" class="fas fa-arrow-left"></i> Retour</button>
+        </div>
+    </div>
+</div>
+  

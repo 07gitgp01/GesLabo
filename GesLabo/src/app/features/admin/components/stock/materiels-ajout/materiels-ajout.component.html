@@ -1,1 +1,91 @@
-<p>materiels-ajout works!</p>
+
+<!-- content body -->
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/stock_materiels">Matériels</a></li>
+            <li class="breadcrumb-item"><a href="#">Ajouter</a></li>
+            <!-- <li class="breadcrumb-item active" aria-current="page">Tableau de Bord</li> -->
+        </ol>
+    </nav>
+    <div class="container-fluid bg-white">
+        <p>Bienvenue sur l'interface d'ajout de nouveau matériel.</p>
+        <hr> 
+        <div class="row pb-3">
+            <h2 class="text-success"><i class="fas fa-calendar-plus"></i> Nouveau matériel</h2>
+            <div class="col-md-12">
+                <form [formGroup]="fG" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <!-- Nom -->
+                        <div class="col-md-6 mb-3">
+                            <label for="nom" class="form-label"><i class="fas fa-tag"></i> Nom</label>
+                            <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Nom du matériel" required>
+                        </div>
+                        <!-- Description -->
+                        <div class="col-md-6 mb-3">
+                            <label for="description" class="form-label"><i class="fas fa-info-circle"></i> Description</label>
+                            <textarea class="form-control" formControlName="description" id="description" rows="3" placeholder="Description du matériel"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Catégorie -->
+                        <div class="col-md-6 mb-3">
+                            <label for="categorie" class="form-label"><i class="fas fa-list"></i> Catégorie</label>
+                            <select class="form-select" formControlName="categorie" id="categorie" required>
+                                <option value="" disabled selected>Choisissez une catégorie...</option>
+                                <option *ngFor="let categorie of categories" [value]="categorie.id">{{ categorie.nom }}</option>
+                            </select>
+                        </div>
+                        <!-- Numéro de série -->
+                        <div class="col-md-6 mb-3">
+                            <label for="numero_serie" class="form-label"><i class="fas fa-barcode"></i> Numéro de série</label>
+                            <input type="text" class="form-control" formControlName="numero_serie" id="numero_serie" placeholder="Numéro de série" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- État -->
+                        <div class="col-md-6 mb-3">
+                            <label for="etat" class="form-label"><i class="fas fa-cog"></i> État</label>
+                            <select class="form-select" formControlName="etat" id="etat" required>
+                                <option value="" disabled selected>Choisissez un état...</option>
+                                <option *ngFor="let etat of etats" [value]="etat.value" [ngClass]="etat.class">{{ etat.label }}</option>
+                            </select>
+                        </div>
+                        <!-- Image -->
+                        <div class="col-md-6 mb-3">
+                            <label for="image" class="form-label"><i class="fas fa-image"></i> Image du matériel</label>
+                            <input type="file" class="form-control" formControlName="image" id="image" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Laboratoire -->
+                        <div class="col-md-6 mb-3">
+                            <label for="laboratoire" class="form-label"><i class="fas fa-building"></i> Laboratoire propriétaire</label>
+                            <select class="form-select" formControlName="laboratoire" id="laboratoire" required>
+                                <option value="" disabled selected>Choisissez un laboratoire...</option>
+                                <option *ngFor="let laboratoire of laboratoires" [value]="laboratoire.id">{{ laboratoire.nom }}</option>
+                            </select>
+                        </div>
+                        <!-- Stock général -->
+                        <div class="col-md-6 mb-3">
+                            <label for="est_stock_general" class="form-label"><i class="fas fa-box"></i> Est un stock général</label>
+                            <input type="checkbox" class="form-check-input" formControlName="est_stock_general" id="est_stock_general">
+                            <label class="form-check-label" for="est_stock_general">Oui</label>
+                        </div>
+                    </div>
+                    <!-- Remarques -->
+                    <div class="mb-3">
+                        <label for="notice" class="form-label"><i class="fas fa-comment-dots"></i> Mode d'utilisation</label>
+                        <textarea class="form-control" formControlName="notice" id="notice" rows="3" placeholder="Ajoutez des remarques supplémentaires..."></textarea>
+                    </div>
+                    <!-- Boutons d'action -->
+                    <div class="d-flex justify-content-start gap-2">
+                        <button type="reset" class="btn btn-secondary"><i class="fas fa-times"></i><a class="text-danger" routerLink="/stock_materiels">Annuler</a></button>
+                        <button type="submit" class="btn btn-success" [disabled]="!fG.valid"><i class="fas fa-save"></i> Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>

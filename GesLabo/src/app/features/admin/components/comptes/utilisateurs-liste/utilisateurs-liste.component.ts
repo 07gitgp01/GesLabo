@@ -13,19 +13,28 @@ import autoTable from 'jspdf-autotable';
 export class UtilisateursListeComponent implements OnInit {
 liste:any[] =[];
 universites:any[] = [];
+tabVide="";
+
 
   constructor(private usersService: UsersService,
               private univService:UniversitesService
   ){}
   ngOnInit() {
     this.getUniversites();
-    this.getListe();
   }
 
   getUniversites(){
     this.univService.getListe().subscribe(
       (data) => {
-        this.universites = data;
+        if(!data === null){
+          this.universites = data;
+          this.liste = data;
+          console.log(this.liste)
+          // this.tabVide = "Aucune réservation disponible pour le moment.";
+  
+        }else{
+          this.tabVide = "Aucun utilisateur enregisté pour le moment.";
+        }
       },
       (error) => {
         console.error('Erreur lors de la récupération des universités :', error);
@@ -35,6 +44,7 @@ universites:any[] = [];
 
   idToname(data: any){
     data.forEach((element: any) => {
+      console.log("id_element:", element.id)
           // Trouver l'université correspondante
           const userUniversite = this.universites.find((univ) => {
             return univ.id === element.universite; // Renvoie vrai si l'ID correspond
@@ -50,19 +60,7 @@ universites:any[] = [];
           }
         });
   }
-  getListe() {
-    this.usersService.getListe().subscribe(
-      (data) => {
-        this.idToname(data); // appel de la fonction idToname
   
-        this.liste = data; // Assigne les données à la liste
-        console.log(this.liste);
-      },
-      (error) => {
-        console.error('Erreur lors de la récupération des utilisateurs :', error);
-      }
-    );
-  }
 
 
   //exporter les donnees en csv

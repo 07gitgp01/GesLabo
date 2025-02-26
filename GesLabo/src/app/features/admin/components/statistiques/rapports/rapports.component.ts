@@ -4,6 +4,9 @@ import { CategoriesService } from '../../../admin-shared/services/stockServices/
 import { MaterielsService } from '../../../admin-shared/services/stockServices/materiels.service';
 import { UsersService } from '../../../admin-shared/services/comptesServices/users.service';
 import { ChartModule } from 'primeng/chart';
+import { ChartOptions } from 'chart.js';
+import { forkJoin } from 'rxjs';
+
 // import { SharedModule } from 'src/app/shared/shared.module';
 
 @Component({
@@ -16,8 +19,11 @@ export class RapportsComponent implements OnInit {
   materiels: any[] = []; // Pour stocker les matériels
   utilisateurs: any[] = []; // Pour stocker les utilisateurs
   reservations: any[] = []; // Pour stocker les réservations
+
   data: any;
   options: any;
+  dataHist: any;
+  optionsHist: any;
   dataCirc: any;
   optionsCirc: any;
 
@@ -30,28 +36,47 @@ export class RapportsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData(); // Charge les données au démarrage
-    this.histogram();
-    this.circulaire();
+    // this.histogram();
+    // this.circulaire();
   }
 
   loadData() {
-    // Exemple de chargement des données
-    this.categoriesService.getListe().subscribe(data => {
-      this.categories = data; // Assurez-vous que `data` est un tableau
-    });
-
-    this.materielsService.getListe().subscribe(data => {
-      this.materiels = data; // Assurez-vous que `data` est un tableau
-    });
-
-    this.usersService.getListe().subscribe(data => {
-      this.utilisateurs = data; // Assurez-vous que `data` est un tableau
-    });
-
-    this.reservationsService.getListe().subscribe(data => {
-      this.reservations = data; // Assurez-vous que `data` est un tableau
+    // Utiliser forkJoin pour attendre que tous les appels soient terminés
+    forkJoin({
+      categories: this.categoriesService.getListe(),
+      materiels: this.materielsService.getListe(),
+      utilisateurs: this.usersService.getListe(),
+      reservations: this.reservationsService.getListe()
+    }).subscribe(({ categories, materiels, utilisateurs, reservations }) => {
+      // Stocker les données dans les propriétés du composant
+      this.categories = categories;
+      this.materiels = materiels;
+      this.utilisateurs = utilisateurs;
+      this.reservations = reservations;
+      // Mettre à jour les graphiques après le chargement des données
+      this.histogram();
+      this.circulaire();
     });
   }
+
+  // loadData() {
+  //   // Exemple de chargement des données
+  //   this.categoriesService.getListe().subscribe(data => {
+  //     this.categories = data; // Assurez-vous que `data` est un tableau
+  //   });
+
+  //   this.materielsService.getListe().subscribe(data => {
+  //     this.materiels = data; // Assurez-vous que `data` est un tableau
+  //   });
+
+  //   this.usersService.getListe().subscribe(data => {
+  //     this.utilisateurs = data; // Assurez-vous que `data` est un tableau
+  //   });
+
+  //   this.reservationsService.getListe().subscribe(data => {
+  //     this.reservations = data; // Assurez-vous que `data` est un tableau
+  //   });
+  // }
 
   // Méthodes pour compter les éléments
   getCategoriesCount(): number {
@@ -142,8 +167,12 @@ export class RapportsComponent implements OnInit {
 
 
   //////////////////////////////////////////:Diagramme circulaire/
+  // Pie
+  
  
   circulaire(){
+        // this.loadData();
+        console.log(this.materiels.length, this.getReservationsCount(), this.getUtilisateursCount())
         const documentStyleCirc = getComputedStyle(document.documentElement);
         const textColorCirc = documentStyleCirc.getPropertyValue('--text-color');
 
@@ -151,7 +180,7 @@ export class RapportsComponent implements OnInit {
             labels: ['Materiels', 'Reservations', 'Demandes'],
             datasets: [
                 {
-                  dataCirc: [300, 50, 100],
+                  data: [this.getMaterielsCount(), this.getReservationsCount(), this.getUtilisateursCount()],
                     backgroundColor: [documentStyleCirc.getPropertyValue('--blue-500'), documentStyleCirc.getPropertyValue('--yellow-500'), documentStyleCirc.getPropertyValue('--green-500')],
                     hoverBackgroundColor: [documentStyleCirc.getPropertyValue('--blue-400'), documentStyleCirc.getPropertyValue('--yellow-400'), documentStyleCirc.getPropertyValue('--green-400')]
                 }
@@ -160,7 +189,7 @@ export class RapportsComponent implements OnInit {
 
 
         this.optionsCirc = {
-            cutout: '30%',
+            cutout: '50%',
             plugins: {
                 legend: {
                     labels: {
@@ -169,6 +198,7 @@ export class RapportsComponent implements OnInit {
                 }
             }
         };
+        
   }
 
 }

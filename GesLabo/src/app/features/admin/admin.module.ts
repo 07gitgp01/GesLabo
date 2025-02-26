@@ -5,6 +5,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
+    SharedModule
   ],
   exports: [
     AdminComponent
