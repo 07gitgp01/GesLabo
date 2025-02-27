@@ -24,7 +24,7 @@
                     </div>
                     <!-- Boutons d'action -->
                     <div>
-                        <button class="btn btn-primary" routerLink="/stock/ajout"><i class="fas fa-plus"></i> Nouveau</button>
+                        <button class="btn btn-primary" routerLink="/stock_categories_ajout"><i class="fas fa-plus"></i> Nouveau</button>
                         <button class="btn btn-secondary"><i class="fas fa-print"></i> Imprimer</button>
                         <button class="btn btn-success"><i class="fas fa-file-export"></i> Exporter</button>
                     </div>
@@ -34,7 +34,9 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Image</th>
                             <th>Libelle</th>
+                            <th>Code</th>
                             <th>Description</th>
                             
                             <th>Actions</th>
@@ -50,12 +52,14 @@
                     <tbody *ngIf="!loading && liste.length > 0">
                         <tr *ngFor="let cat of liste; let i = index">
                             <td>{{i + 1}}</td>
+                            <td>{{cat.image}}</td>
                             <td>{{cat.nom}}</td>
+                            <td>{{cat.code}}</td>
                             <td>{{cat.description}}</td>
                             
                             <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/stock/details" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/stock/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-info btn-sm"><i routerLink="/stock_categories_details/{{cat.id}}" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/stock_categories_modif/{{cat.id}}" class="fas fa-edit"></i></button>
                                 <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>

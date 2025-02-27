@@ -181,8 +181,8 @@ export class RapportsComponent implements OnInit {
             datasets: [
                 {
                   data: [this.getMaterielsCount(), this.getReservationsCount(), this.getUtilisateursCount()],
-                    backgroundColor: [documentStyleCirc.getPropertyValue('--blue-500'), documentStyleCirc.getPropertyValue('--yellow-500'), documentStyleCirc.getPropertyValue('--green-500')],
-                    hoverBackgroundColor: [documentStyleCirc.getPropertyValue('--blue-400'), documentStyleCirc.getPropertyValue('--yellow-400'), documentStyleCirc.getPropertyValue('--green-400')]
+                    backgroundColor: [documentStyleCirc.getPropertyValue('--yellow-500'), documentStyleCirc.getPropertyValue('--blue-500'), documentStyleCirc.getPropertyValue('--green-500')],
+                    hoverBackgroundColor: [documentStyleCirc.getPropertyValue('--yellow-400'), documentStyleCirc.getPropertyValue('--blue-400'), documentStyleCirc.getPropertyValue('--green-400')]
                 }
             ]
         };

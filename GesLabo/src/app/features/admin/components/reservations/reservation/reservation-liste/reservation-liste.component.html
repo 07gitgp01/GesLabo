@@ -62,8 +62,8 @@
                             <td><span class="badge bg-success">{{reserv.statut}}</span></td>
                             <td><span class="badge bg-success">{{reserv.remis}}</span></td>
                             <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif" class="fas fa-edit"></i></button>
+                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details/{{reserv.id}}" class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif/{{reserv.id}}" class="fas fa-edit"></i></button>
                                 <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>

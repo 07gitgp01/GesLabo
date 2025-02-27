@@ -8,8 +8,8 @@ import { ReservationDetailsComponent } from './reservation-details/reservation-d
 const routes: Routes = [
   {path: '', component: ReservationListeComponent},
   {path: 'ajout', component: ReservationAjoutComponent},
-  {path: 'modif', component: ReservationModifComponent},
-  {path: 'details', component: ReservationDetailsComponent},
+  {path: 'modif/:id', component: ReservationModifComponent},
+  {path: 'details/:id', component: ReservationDetailsComponent},
   
 ];
 
