@@ -7,7 +7,7 @@ import { RapportsComponent } from './rapports/rapports.component';
 import { TendancesComponent } from './tendances/tendances.component';
 import { AnalysesComponent } from './analyses/analyses.component';
 // import { AdminModule } from '../../admin.module';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from 'src/app/features/admin/shared/shared.module';
 
 
 

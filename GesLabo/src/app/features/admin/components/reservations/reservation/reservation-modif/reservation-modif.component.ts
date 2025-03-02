@@ -76,11 +76,13 @@ export class ReservationModifComponent {
           
           this.reservationsService.update(this.reservId, materiel).subscribe(
               response => {
+                // Optionnel : Afficher un message de succès à l'utilisateur
                   console.log('Reservation modifiée avec succès:', response);
+                  alert('Reservation modifiée avec succès!');
                   // Réinitialiser le formulaire
                   this.fG.reset();
-                  // Optionnel : Afficher un message de succès à l'utilisateur
-                  alert('Reservation modifiée avec succès!');
+                  this.router.navigate(['/reservations']); // Rediriger après succès
+
               },
               error => {
                   console.error('Erreur lors de la modification de la reservation:', error);

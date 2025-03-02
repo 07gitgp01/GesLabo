@@ -20,6 +20,8 @@ export class RapportsComponent implements OnInit {
   utilisateurs: any[] = []; // Pour stocker les utilisateurs
   reservations: any[] = []; // Pour stocker les réservations
   demandes: any[] = []; // Pour stocker les demandes
+  demandesRefusees: any[] = []; // Pour stocker les demandes refusées
+  demandesConfirmees: any[] = []; // Pour stocker les demandes confirmées
 
   data: any;
   options: any;
@@ -55,7 +57,27 @@ export class RapportsComponent implements OnInit {
       this.materiels = materiels;
       this.utilisateurs = utilisateurs;
       this.reservations = reservations;
-      this.demandes = reservations.filter((reservation: any) => {reservation.statut === "en_attente"});
+      this.demandes = [];
+        for (const reservation of reservations) {
+            if (reservation.statut === "en_attente") {
+                this.demandes.push(reservation);
+            }
+        }
+        //
+        this.demandesRefusees = [];
+        for (const reservation of reservations) {
+            if (reservation.statut === "refusee") {
+                this.demandesRefusees.push(reservation);
+            }
+        }
+        //
+        this.demandesConfirmees = [];
+        for (const reservation of reservations) {
+            if (reservation.statut === "terminee") {
+                this.demandesConfirmees.push(reservation);
+            }
+        }
+      // this.demandes = reservations.filter((reservation: any) => {reservation.statut === "en_attente"});
       // Mettre à jour les graphiques après le chargement des données
       console.log("demandes:", reservations)
       console.log("demandes:", this.demandes)
@@ -101,6 +123,12 @@ export class RapportsComponent implements OnInit {
   }
   getDemandesCount(): number {
     return this.demandes.length; // Retourne le nombre de réservations
+  }
+  getDemandesRefuseesCount(): number {
+    return this.demandesRefusees.length; // Retourne le nombre de réservations
+  }
+  getDemandesConfirmeesCount(): number {
+    return this.demandesConfirmees.length; // Retourne le nombre de réservations
   }
 
 

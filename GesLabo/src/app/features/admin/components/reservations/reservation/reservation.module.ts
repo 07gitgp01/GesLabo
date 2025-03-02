@@ -6,7 +6,7 @@ import { ReservationListeComponent } from './reservation-liste/reservation-liste
 import { ReservationAjoutComponent } from './reservation-ajout/reservation-ajout.component';
 import { ReservationModifComponent } from './reservation-modif/reservation-modif.component';
 import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from 'src/app/features/admin/shared/shared.module';
 
 
 @NgModule({

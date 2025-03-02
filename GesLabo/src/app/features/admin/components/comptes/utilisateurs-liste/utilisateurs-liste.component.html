@@ -1,6 +1,6 @@
 
 <!-- content body -->
-<div class="container">
+<div class="container" id="corps">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Comptes</a></li>
@@ -29,62 +29,65 @@
                         <button class="btn btn-success" (click)="exportToPDF()"><i class="fas fa-file-export"></i> Exporter</button>
                     </div>
                 </div>
+                <div class="table-responsive" style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
 
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Statut</th>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Email</th>
-                            <th>Tel</th>
-                            <!-- <th>Genre</th> -->
-                            <!-- <th>Date_Nais</th> -->
-                            <!-- <th>Profil</th> -->
-                            <th>Adresse</th>
-                            <th>Matricule</th>
-                            <th>Grade</th>
-                            <!-- <th>Laboratoire</th> -->
-                            <!-- <th>Université</th> -->
-                            <th>Actions</th>
-
-                            
-                        </tr>
-                    </thead>
-                    <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
-                        <td colspan="4" class="text-center">
-                            <div class="spinner-container">
-                                <mat-spinner></mat-spinner> Chargement en cours...
-                            </div>
-                        </td>
-                    </tr>
-                    <tbody *ngIf="!loading && liste.length > 0">
-                        <tr *ngFor="let user of liste; let i = index">
-                            <td style="width: 10px;">{{i + 1}}</td>
-                            <td>{{user.user_type}}</td>
-                            <td>{{user.first_name}}</td>
-                            <td>{{user.last_name}}</td>
-                            <td>{{user.email}}</td>
-                            <td>{{user.phone}}</td>
-                            <!-- <td>{{user.genre}}</td> -->
-                            <!-- <td>{{user.date_of_birth}}</td> -->
-                            <!-- <td>{{user.profile_picture}}</td> -->
-                            <td>{{user.address}}</td>
-                            <td>{{user.matricule}}</td>
-                            <td>{{user.grade}}</td>
-                            <!-- <td>{{user.laboratoire}}</td> -->
-                            <!-- <td>{{user.universite}}</td> -->
-                            <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/comptes/utilisateurs/details" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/comptes/utilisateurs/modif" class="fas fa-edit"></i></button>
-                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Statut</th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Email</th>
+                                <th>Tel</th>
+                                <!-- <th>Genre</th> -->
+                                <!-- <th>Date_Nais</th> -->
+                                <!-- <th>Profil</th> -->
+                                <th>Adresse</th>
+                                <th>Matricule</th>
+                                <th>Grade</th>
+                                <!-- <th>Laboratoire</th> -->
+                                <!-- <th>Université</th> -->
+                                <th>Actions</th>
+    
+                                
+                            </tr>
+                        </thead>
+                        <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
+                            <td colspan="4" class="text-center">
+                                <div class="spinner-container">
+                                    <mat-spinner></mat-spinner> Chargement en cours...
+                                </div>
                             </td>
                         </tr>
                         
-                    </tbody>
-                    <p><span class="badge bg-danger">{{tabVid}}</span></p>
-                </table>
+                        <tbody *ngIf="!loading && liste.length > 0">
+                            <tr *ngFor="let user of liste; let i = index">
+                                <td style="width: 10px;">{{i + 1}}</td>
+                                <td>{{user.user_type}}</td>
+                                <td>{{user.first_name}}</td>
+                                <td>{{user.last_name}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.phone}}</td>
+                                <!-- <td>{{user.genre}}</td> -->
+                                <!-- <td>{{user.date_of_birth}}</td> -->
+                                <!-- <td>{{user.profile_picture}}</td> -->
+                                <td>{{user.address}}</td>
+                                <td>{{user.matricule}}</td>
+                                <td>{{user.grade}}</td>
+                                <!-- <td>{{user.laboratoire}}</td> -->
+                                <!-- <td>{{user.universite}}</td> -->
+                                <td>
+                                    <button class="btn btn-info btn-sm"><i routerLink="/comptes/utilisateurs/details" class="fas fa-eye"></i></button>
+                                    <button class="btn btn-warning btn-sm"><i routerLink="/comptes/utilisateurs/modif" class="fas fa-edit"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                        <p><span class="badge bg-danger">{{tabVid}}</span></p>
+                    </table>
+                </div>
             </div>
         </div>
          <hr> 

@@ -32,7 +32,7 @@ export class CategoriesModifComponent implements OnInit {
       }
 
       getCategories() {
-        this.categorieId = this.route.snapshot.paramMap.get('id')!; // Obtenir l'ID du matériel depuis les paramètres de la route
+        this.categorieId = this.route.snapshot.paramMap.get('id')!; // Obtenir l'ID du catégorie depuis les paramètres de la route
         this.categorieService.getCategoriesById(this.categorieId).subscribe(data => {
           this.fG.patchValue(data); // Pré-remplir le formulaire avec les données du matériel
         });
@@ -53,18 +53,25 @@ export class CategoriesModifComponent implements OnInit {
             
             this.categorieService.add(categorie).subscribe(
                 response => {
-                    console.log('Matériel ajouté avec succès:', response);
+                    console.log('Matériel modifié avec succès:', response);
+                    alert("catégorie modifié avec succès!");
                     // Réinitialiser le formulaire
                     this.fG.reset();
                     // Optionnel : Afficher un message de succès à l'utilisateur
+                    this.router.navigate(['/stock_categories']); // Rediriger après succès
+
                 },
                 error => {
-                    console.error('Erreur lors de l\'ajout du matériel:', error);
+                    console.error('Erreur lors de l\'ajout du catégorie:', error);
+                    alert("Erreur lors de l\'ajout du catégorie!");
+
                     // Optionnel : Afficher un message d'erreur à l'utilisateur
                 }
             );
         } else {
             console.log('Le formulaire n\'est pas valide');
+            alert("Le formulaire n\'est pas valide!");
+
             // Optionnel : Afficher un message d'erreur pour indiquer que le formulaire est invalide
         }
     }

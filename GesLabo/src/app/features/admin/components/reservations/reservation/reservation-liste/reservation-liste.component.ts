@@ -34,8 +34,16 @@ export class ReservationListeComponent {
           materiels: this.materielsService.getListe(),
         }).subscribe(({ liste, users, materiels }) => {
           if (liste && liste.length > 0) {
-            this.liste = liste; // Assigne la liste récupérée
+            // this.liste = liste; // Assigne la liste récupérée
+            this.liste = [];
+            for (const reservation of liste) {
+                if (reservation.statut === "terminee") {
+                    this.liste.push(reservation);
+                }
+            }
+            //
             this.users = users; // Assigne la liste récupérée
+            
             this.materiels = materiels; // Assigne la liste récupérée
             this.idToname(this.liste); // Appel de la fonction idToname sur la liste récupérée
             this.tabVide = ""; // Réinitialise le message d'absence de données

@@ -29,52 +29,54 @@
                         <button class="btn btn-success"><i class="fas fa-file-export"></i> Exporter</button>
                     </div>
                 </div>
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Utilisateur</th>
-                            <th>Matériel</th>
-                            <th>Qte</th>
-                            <th>Date Reser</th>
-                            <th>Date Debut</th>
-                            <th>Date Fin</th>
-                            <!-- <th>Statut</th> -->
-                            <!-- <th>Retour</th> -->
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
-                        <td colspan="7" class="text-center">
-                            <div class="spinner-container">
-                                <mat-spinner diameter="50"></mat-spinner> Chargement en cours ... <!-- Réduisez la taille ici -->
-                            </div>
-                        </td>
-                    </tr>
-                    <tbody *ngIf="!loading && liste.length > 0;">
-                        <tr *ngFor="let reserv of liste; let i = index">
-                            <td>{{i + 1}}</td>
-                            <td>{{reserv.user}}</td>
-                            <td>{{reserv.materiel}}</td>
-                            <td>{{reserv.quantite}}</td>
-                            <td>{{reserv.date_reservation}}</td>
-                            <td>{{reserv.date_debut}}</td>
-                            <td>{{reserv.date_fin}}</td>
-                            <!-- <td><span class="badge bg-success">{{reserv.statut}}</span></td> -->
-                            <!-- <td>
-                                <span class="badge bg-success">
-                                    {{reserv.remis}}
-                                </span>
-                            </td> -->
-                            <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/reservations/details/{{reserv.id}}" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif/{{reserv.id}}" class="fas fa-edit"></i></button>
-                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                <div class="table-responsive" style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
+                    
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Utilisateur</th>
+                                <th>Matériel</th>
+                                <th>Qte</th>
+                                <th>Date Reser</th>
+                                <th>Date Debut</th>
+                                <th>Date Fin</th>
+                                <!-- <th>Statut</th> -->
+                                <!-- <th>Retour</th> -->
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
+                            <td colspan="7" class="text-center">
+                                <div class="spinner-container">
+                                    <mat-spinner diameter="50"></mat-spinner> Chargement en cours ... <!-- Réduisez la taille ici -->
+                                </div>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
+                        <tbody *ngIf="!loading && liste.length > 0;">
+                            <tr *ngFor="let reserv of liste; let i = index">
+                                <td>{{i + 1}}</td>
+                                <td>{{reserv.user}}</td>
+                                <td>{{reserv.materiel}}</td>
+                                <td>{{reserv.quantite}}</td>
+                                <td>{{reserv.date_reservation | date:'dd/MM/yyyy'}}</td>
+                                <td>{{reserv.date_debut | date:'dd/MM/yyyy'}}</td>
+                                <td>{{reserv.date_fin | date:'dd/MM/yyyy'}}</td>
+                                <!-- <td><span class="badge bg-success">{{reserv.statut}}</span></td> -->
+                                <!-- <td>
+                                    <span class="badge bg-success">
+                                        {{reserv.remis}}
+                                    </span>
+                                </td> -->
+                                <td>
+                                    <button class="btn btn-info btn-sm"><i routerLink="/reservations/details/{{reserv.id}}" class="fas fa-eye"></i></button>
+                                    <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif/{{reserv.id}}" class="fas fa-edit"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p><span class="badge bg-danger">{{tabVide}}</span></p>
             </div>
         </div>

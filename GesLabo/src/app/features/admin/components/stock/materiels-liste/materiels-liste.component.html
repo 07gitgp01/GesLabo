@@ -29,80 +29,82 @@
                         <button class="btn btn-success"><i class="fas fa-file-export"></i> Exporter</button>
                     </div>
                 </div>
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <!-- <th>Photo</th> -->
-                            <th>Libellé</th>
-                            <th>Description</th>
-                            <th>Catégorie</th>
-                            <th>N°Serie</th>
-                            <th>Etat</th>
-                            <th>Laboratoire</th>
-                            <th>Stock gle</th>
-                            <th>Notice</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
-                        <td colspan="4" class="text-center">
-                            <div class="spinner-container">
-                                <mat-spinner></mat-spinner> Chargement en cours...
-                            </div>
-                        </td>
-                    </tr>
-                    <tbody *ngIf="!loading && liste.length > 0">
-                        <tr *ngFor="let mat of liste; let i = index">
-                            <td>{{i + 1}}</td>
-                            <!-- <td>{{i + 1}}</td> -->
-                            <td>{{mat.nom}}</td>
-                            <td>{{mat.description}}</td>
-                            <td>{{mat.categorie_nom}}</td>
-                            <td>{{mat.numero_serie}}</td>
-                            <td >
-                                <ng-container *ngIf="mat.etat === 'disponible'">
-                                    <span [ngClass]="{
-                                        'badge bg-success': mat.etat === 'disponible',
-                                    }">
-                                        {{ mat.etat }}
-                                    </span>
-                                </ng-container>
-                                <ng-container *ngIf="mat.etat === 'hors_service'">
-                                    <span [ngClass]="{
-                                        'badge bg-danger': mat.etat === 'hors_service',
-                                    }">
-                                        {{ mat.etat }}
-                                    </span>
-                                </ng-container>
-                                <ng-container *ngIf="mat.etat === 'en_reparation'">
-                                    <span [ngClass]="{
-                                        'badge bg-warning': mat.etat === 'en_reparation'
-                                    }">
-                                        {{ mat.etat }}
-                                    </span>
-                                </ng-container>
-                            </td>
-                            <td>{{mat.laboratoire}}</td>
-                            <td >
-                            <span [ngClass]="mat.est_stock_general ? 'badge bg-success' : 'badge bg-danger'">
-
-                                {{ mat.est_stock_general ? 'Oui' : 'Non' }}
-                            </span>
-
-                            </td>
-                
-                            <td>{{mat.notice}}</td>
-                            <td>
-                                <button class="btn btn-info btn-sm"><i routerLink="/stock_materiels_details/{{mat.id}}" class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i routerLink="/stock_materiels_modif/{{mat.id}}" class="fas fa-edit"></i></button>
-                                <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                <div class="table-responsive" style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
+                    
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <!-- <th>Photo</th> -->
+                                <th>Libellé</th>
+                                <th>Description</th>
+                                <th>Catégorie</th>
+                                <th>N°Serie</th>
+                                <th>Etat</th>
+                                <th>Laboratoire</th>
+                                <th>Stock gle</th>
+                                <th>Notice</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
+                            <td colspan="4" class="text-center">
+                                <div class="spinner-container">
+                                    <mat-spinner></mat-spinner> Chargement en cours...
+                                </div>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
-                <!-- <p><span class="badge bg-danger">{{tabVide}}</span></p> -->
+                        <tbody *ngIf="!loading && liste.length > 0">
+                            <tr *ngFor="let mat of liste; let i = index">
+                                <td>{{i + 1}}</td>
+                                <!-- <td>{{i + 1}}</td> -->
+                                <td>{{mat.nom}}</td>
+                                <td>{{mat.description}}</td>
+                                <td>{{mat.categorie_nom}}</td>
+                                <td>{{mat.numero_serie}}</td>
+                                <td >
+                                    <ng-container *ngIf="mat.etat === 'disponible'">
+                                        <span [ngClass]="{
+                                            'badge bg-success': mat.etat === 'disponible',
+                                        }">
+                                            {{ mat.etat }}
+                                        </span>
+                                    </ng-container>
+                                    <ng-container *ngIf="mat.etat === 'hors_service'">
+                                        <span [ngClass]="{
+                                            'badge bg-danger': mat.etat === 'hors_service',
+                                        }">
+                                            {{ mat.etat }}
+                                        </span>
+                                    </ng-container>
+                                    <ng-container *ngIf="mat.etat === 'en_reparation'">
+                                        <span [ngClass]="{
+                                            'badge bg-warning': mat.etat === 'en_reparation'
+                                        }">
+                                            {{ mat.etat }}
+                                        </span>
+                                    </ng-container>
+                                </td>
+                                <td>{{mat.laboratoire}}</td>
+                                <td >
+                                <span [ngClass]="mat.est_stock_general ? 'badge bg-success' : 'badge bg-danger'">
+    
+                                    {{ mat.est_stock_general ? 'Oui' : 'Non' }}
+                                </span>
+    
+                                </td>
+                    
+                                <td>{{mat.notice}}</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm"><i routerLink="/stock_materiels_details/{{mat.id}}" class="fas fa-eye"></i></button>
+                                    <button class="btn btn-warning btn-sm"><i routerLink="/stock_materiels_modif/{{mat.id}}" class="fas fa-edit"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><span class="badge bg-danger">{{tabVide}}</span></p>
 
             </div>
         </div>

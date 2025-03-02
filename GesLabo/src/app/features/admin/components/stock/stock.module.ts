@@ -9,7 +9,7 @@ import { CategoriesAjoutComponent } from './categories-ajout/categories-ajout.co
 import { CategoriesModifComponent } from './categories-modif/categories-modif.component';
 
 import { StockRoutingModule } from './stock-routing.module';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from 'src/app/features/admin/shared/shared.module';
 
 
 @NgModule({

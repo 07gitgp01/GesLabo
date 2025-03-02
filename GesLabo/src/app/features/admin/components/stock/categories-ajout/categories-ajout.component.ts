@@ -42,18 +42,24 @@ export class CategoriesAjoutComponent {
           
           this.categorieService.add(categorie).subscribe(
               response => {
-                  console.log('Matériel ajouté avec succès:', response);
+                  console.log('Categorie ajoutée avec succès:', response);
+                  alert("Categorie ajoutée avec succès!");
+
                   // Réinitialiser le formulaire
                   this.fG.reset();
                   // Optionnel : Afficher un message de succès à l'utilisateur
               },
               error => {
                   console.error('Erreur lors de l\'ajout du matériel:', error);
+                  alert("Erreur lors de l\'ajout de la categorie!");
+
                   // Optionnel : Afficher un message d'erreur à l'utilisateur
               }
           );
       } else {
           console.log('Le formulaire n\'est pas valide');
+          alert("Le formulaire n\'est pas valide!");
+
           // Optionnel : Afficher un message d'erreur pour indiquer que le formulaire est invalide
       }
   }

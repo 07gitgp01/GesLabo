@@ -5,7 +5,7 @@ import { ReservationsRoutingModule } from './reservations-routing.module';
 import { DemandesComponent } from './demandes/demandes.component';
 import { HistoriqueComponent } from './historique/historique.component';
 import { ReservationModule } from './reservation/reservation.module';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from 'src/app/features/admin/shared/shared.module';
 
 
 @NgModule({

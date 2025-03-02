@@ -70,14 +70,20 @@ export class MaterielsModifComponent implements OnInit {
       this.materielService.update(this.materielId, materiel).subscribe(
         response => {
           console.log('Matériel modifié avec succès:', response);
+          alert("Matériel modifié avec succès!");
+
           this.router.navigate(['/stock_materiels']); // Rediriger après succès
         },
         error => {
           console.error('Erreur lors de la modification du matériel:', error);
+          alert("Erreur lors de la modification du matériel!");
+
         }
       );
     } else {
       console.log('Le formulaire n\'est pas valide');
+      alert("Le formulaire n\'est pas valide!");
+
     }
   }
   onFileChange(event: any) {
