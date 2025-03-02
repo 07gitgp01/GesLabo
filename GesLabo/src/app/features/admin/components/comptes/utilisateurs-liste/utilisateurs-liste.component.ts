@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UsersService } from 'src/app/features/admin/admin-shared/services/comptesServices/users.service';
 import { UniversitesService } from 'src/app/features/admin/admin-shared/services/parametresServices/universites.service';
 import { jsPDF } from 'jspdf';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import autoTable from 'jspdf-autotable';
 import { forkJoin } from 'rxjs';
 

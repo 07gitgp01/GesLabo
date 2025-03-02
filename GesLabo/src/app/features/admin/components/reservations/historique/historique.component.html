@@ -55,9 +55,9 @@
                         <td>{{ reservation.date_fin | date:'dd/MM/yyyy' }}</td>
                         <td>
                             <span class="badge" [ngClass]="{
-                                'bg-success': reservation.statut === 'confirmée',
-                                'bg-warning': reservation.statut === 'en attente',
-                                'bg-danger': reservation.statut === 'annulée'
+                                'bg-success': reservation.statut === 'confirmee',
+                                'bg-warning': reservation.statut === 'en_attente',
+                                'bg-danger': reservation.statut === 'annulee'
                             }">{{ reservation.statut }}</span>
                         </td>
                         <td>

@@ -30,7 +30,29 @@ export class HistoriqueComponent {
           date_reservation: '2025-02-28',
           date_debut: '2025-03-01',
           date_fin: '2025-03-05',
-          statut: 'confirmée',
+          statut: 'confirmee',
+          remis: true
+        },
+        {
+          id: '2',
+          user: userId,
+          materiel: 'b41ec42a-ba41-4abd-9a25-518b97caf0c5',
+          quantite: 2,
+          date_reservation: '2025-02-28',
+          date_debut: '2025-03-01',
+          date_fin: '2025-03-05',
+          statut: 'annulee',
+          remis: true
+        },
+        {
+          id: '3',
+          user: userId,
+          materiel: 'b41ec42a-ba41-4abd-9a25-518b97caf0c5',
+          quantite: 2,
+          date_reservation: '2025-02-28',
+          date_debut: '2025-03-01',
+          date_fin: '2025-03-05',
+          statut: 'en_attente',
           remis: true
         },
         // Ajoutez d'autres réservations ici
