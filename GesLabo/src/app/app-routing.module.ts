@@ -38,7 +38,7 @@ const routes: Routes = [
     path: "", children: [
       { path: "", loadChildren:() => import ('./features/admin/components/statistiques/statistiques.module').then(m => m.StatistiquesModule)},
       { path: "", loadChildren:() => import ('./features/admin/components/stock/stock.module').then(m => m.StockModule)},
-      { path: "reservations", loadChildren:() => import ('./features/admin/components/reservations/reservations.module').then(m => m.ReservationsModule)},
+      { path: "", loadChildren:() => import ('./features/admin/components/reservations/reservations.module').then(m => m.ReservationsModule)},
       { path: "", loadChildren:() => import ('./features/admin/components/parametres/parametres.module').then(m => m.ParametresModule)},
       { path: "", loadChildren:() => import ('./features/admin/components/comptes/comptes.module').then(m => m.ComptesModule)},
       { path: 'error', component: PageNotFoundComponent},

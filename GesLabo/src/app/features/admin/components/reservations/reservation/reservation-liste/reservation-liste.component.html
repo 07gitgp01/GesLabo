@@ -24,7 +24,7 @@
                     </div>
                     <!-- Boutons d'action -->
                     <div>
-                        <button class="btn btn-primary" routerLink="/reservations/ajout"><i class="fas fa-plus"></i> Nouveau</button>
+                        <!-- <button class="btn btn-primary" routerLink="/reservations/ajout"><i class="fas fa-plus"></i> Nouveau</button> -->
                         <button class="btn btn-secondary"><i class="fas fa-print"></i> Imprimer</button>
                         <button class="btn btn-success"><i class="fas fa-file-export"></i> Exporter</button>
                     </div>
@@ -36,18 +36,19 @@
                             <th>ID</th>
                             <th>Utilisateur</th>
                             <th>Matériel</th>
+                            <th>Qte</th>
                             <th>Date Reser</th>
                             <th>Date Debut</th>
                             <th>Date Fin</th>
-                            <th>Statut</th>
-                            <th>Retour</th>
+                            <!-- <th>Statut</th> -->
+                            <!-- <th>Retour</th> -->
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
                         <td colspan="7" class="text-center">
                             <div class="spinner-container">
-                                <mat-spinner diameter="60"></mat-spinner> Chargement en cours ... <!-- Réduisez la taille ici -->
+                                <mat-spinner diameter="50"></mat-spinner> Chargement en cours ... <!-- Réduisez la taille ici -->
                             </div>
                         </td>
                     </tr>
@@ -56,11 +57,16 @@
                             <td>{{i + 1}}</td>
                             <td>{{reserv.user}}</td>
                             <td>{{reserv.materiel}}</td>
+                            <td>{{reserv.quantite}}</td>
                             <td>{{reserv.date_reservation}}</td>
                             <td>{{reserv.date_debut}}</td>
                             <td>{{reserv.date_fin}}</td>
-                            <td><span class="badge bg-success">{{reserv.statut}}</span></td>
-                            <td><span class="badge bg-success">{{reserv.remis}}</span></td>
+                            <!-- <td><span class="badge bg-success">{{reserv.statut}}</span></td> -->
+                            <!-- <td>
+                                <span class="badge bg-success">
+                                    {{reserv.remis}}
+                                </span>
+                            </td> -->
                             <td>
                                 <button class="btn btn-info btn-sm"><i routerLink="/reservations/details/{{reserv.id}}" class="fas fa-eye"></i></button>
                                 <button class="btn btn-warning btn-sm"><i routerLink="/reservations/modif/{{reserv.id}}" class="fas fa-edit"></i></button>

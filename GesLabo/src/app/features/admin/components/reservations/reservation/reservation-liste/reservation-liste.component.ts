@@ -41,12 +41,12 @@ export class ReservationListeComponent {
             this.tabVide = ""; // Réinitialise le message d'absence de données
             this.loading = false; // Fin du chargement
           } else {
-            this.tabVide = "Aucune catégorie enregistrée pour le moment."; // Message si la liste est vide
+            this.tabVide = "Aucune Réservation enregistrée pour le moment."; // Message si la liste est vide
           }
           console.log("Catégories :", this.liste);
         }, error => {
-          console.error('Erreur lors de la récupération des Catégories :', error);
-          this.tabVide = "Erreur lors de la récupération des Catégories."; // Message d'erreur
+          console.error('Erreur lors de la récupération des Réservations :', error);
+          this.tabVide = "Erreur lors de la récupération des Réservations."; // Message d'erreur
           this.loading = false; // Fin du chargement
         });
       }

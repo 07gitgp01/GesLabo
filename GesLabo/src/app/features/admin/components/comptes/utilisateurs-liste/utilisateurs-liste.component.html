@@ -45,16 +45,23 @@
                             <th>Adresse</th>
                             <th>Matricule</th>
                             <th>Grade</th>
-                            <th>Laboratoire</th>
-                            <th>Université</th>
+                            <!-- <th>Laboratoire</th> -->
+                            <!-- <th>Université</th> -->
                             <th>Actions</th>
 
                             
                         </tr>
                     </thead>
-                    <tbody>
+                    <tr *ngIf="loading"> <!-- Affiche le spinner pendant le chargement -->
+                        <td colspan="4" class="text-center">
+                            <div class="spinner-container">
+                                <mat-spinner></mat-spinner> Chargement en cours...
+                            </div>
+                        </td>
+                    </tr>
+                    <tbody *ngIf="!loading && liste.length > 0">
                         <tr *ngFor="let user of liste; let i = index">
-                            <td>{{i + 1}}</td>
+                            <td style="width: 10px;">{{i + 1}}</td>
                             <td>{{user.user_type}}</td>
                             <td>{{user.first_name}}</td>
                             <td>{{user.last_name}}</td>
@@ -66,8 +73,8 @@
                             <td>{{user.address}}</td>
                             <td>{{user.matricule}}</td>
                             <td>{{user.grade}}</td>
-                            <td>{{user.laboratoire}}</td>
-                            <td>{{user.universite}}</td>
+                            <!-- <td>{{user.laboratoire}}</td> -->
+                            <!-- <td>{{user.universite}}</td> -->
                             <td>
                                 <button class="btn btn-info btn-sm"><i routerLink="/comptes/utilisateurs/details" class="fas fa-eye"></i></button>
                                 <button class="btn btn-warning btn-sm"><i routerLink="/comptes/utilisateurs/modif" class="fas fa-edit"></i></button>
@@ -76,6 +83,7 @@
                         </tr>
                         
                     </tbody>
+                    <p><span class="badge bg-danger">{{tabVid}}</span></p>
                 </table>
             </div>
         </div>

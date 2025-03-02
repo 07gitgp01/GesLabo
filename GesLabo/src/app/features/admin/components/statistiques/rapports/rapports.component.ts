@@ -19,6 +19,7 @@ export class RapportsComponent implements OnInit {
   materiels: any[] = []; // Pour stocker les matériels
   utilisateurs: any[] = []; // Pour stocker les utilisateurs
   reservations: any[] = []; // Pour stocker les réservations
+  demandes: any[] = []; // Pour stocker les demandes
 
   data: any;
   options: any;
@@ -47,13 +48,17 @@ export class RapportsComponent implements OnInit {
       materiels: this.materielsService.getListe(),
       utilisateurs: this.usersService.getListe(),
       reservations: this.reservationsService.getListe()
-    }).subscribe(({ categories, materiels, utilisateurs, reservations }) => {
+      // demandes: this.reservationsService.getListe()
+    }).subscribe(({ categories, materiels, utilisateurs, reservations}) => {
       // Stocker les données dans les propriétés du composant
       this.categories = categories;
       this.materiels = materiels;
       this.utilisateurs = utilisateurs;
       this.reservations = reservations;
+      this.demandes = reservations.filter((reservation: any) => {reservation.statut === "en_attente"});
       // Mettre à jour les graphiques après le chargement des données
+      console.log("demandes:", reservations)
+      console.log("demandes:", this.demandes)
       this.histogram();
       this.circulaire();
     });
@@ -93,6 +98,9 @@ export class RapportsComponent implements OnInit {
 
   getReservationsCount(): number {
     return this.reservations.length; // Retourne le nombre de réservations
+  }
+  getDemandesCount(): number {
+    return this.demandes.length; // Retourne le nombre de réservations
   }
 
 
@@ -172,7 +180,7 @@ export class RapportsComponent implements OnInit {
  
   circulaire(){
         // this.loadData();
-        console.log(this.materiels.length, this.getReservationsCount(), this.getUtilisateursCount())
+        console.log(this.materiels.length, this.getReservationsCount(), this.getUtilisateursCount(), this.getDemandesCount())
         const documentStyleCirc = getComputedStyle(document.documentElement);
         const textColorCirc = documentStyleCirc.getPropertyValue('--text-color');
 
@@ -180,7 +188,7 @@ export class RapportsComponent implements OnInit {
             labels: ['Materiels', 'Reservations', 'Demandes'],
             datasets: [
                 {
-                  data: [this.getMaterielsCount(), this.getReservationsCount(), this.getUtilisateursCount()],
+                  data: [this.getMaterielsCount(), this.getReservationsCount(), this.getDemandesCount()],
                     backgroundColor: [documentStyleCirc.getPropertyValue('--yellow-500'), documentStyleCirc.getPropertyValue('--blue-500'), documentStyleCirc.getPropertyValue('--green-500')],
                     hoverBackgroundColor: [documentStyleCirc.getPropertyValue('--yellow-400'), documentStyleCirc.getPropertyValue('--blue-400'), documentStyleCirc.getPropertyValue('--green-400')]
                 }

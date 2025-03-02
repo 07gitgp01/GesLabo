@@ -10,10 +10,10 @@ import { UtilisateursDetailsComponent } from '../utilisateurs-details/utilisateu
 
 @NgModule({
   declarations: [
-    UtilisateursListeComponent,
-    UtilisateursAjoutComponent,
-    UtilisateursModifComponent,
-    UtilisateursDetailsComponent
+    // UtilisateursListeComponent,
+    // UtilisateursAjoutComponent,
+    // UtilisateursModifComponent,
+    // UtilisateursDetailsComponent
   ],
   imports: [
     CommonModule,

@@ -5,7 +5,7 @@ import { HistoriqueComponent } from './historique/historique.component';
 import { ReservationListeComponent } from './reservation/reservation-liste/reservation-liste.component';
 
 const routes: Routes = [
-  {path:"", component: ReservationListeComponent},
+  {path:"reservations", component: ReservationListeComponent},
   {path:"demandes", component: DemandesComponent},
   {path:"historique", component: HistoriqueComponent}
 ];

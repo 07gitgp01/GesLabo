@@ -14,7 +14,7 @@
         <div class="row pb-3">
             <h2 class="text-success"><i class="fas fa-calendar-plus"></i> Nouvelle Réservation</h2>
             <div class="col-md-12">
-                <form>
+                <form [formGroup]="fG" (ngOnSubmit)="onSubmit()">
                     <div class="row">
                         <!-- Utilisateur -->
                         <div class="col-md-6 mb-3">

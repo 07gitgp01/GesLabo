@@ -22,22 +22,53 @@ export class ReservationsService{
     return this.http.get<any[]>(this.url, headers);
   }
 
-  reservationsAjout(value:any): void {
-      let val = value;
-      let body = {
-        id: value.id,  
-        firstName: value.firstName,
-        lastName: value.lastName,
-        phone: value.phone,
-        email: value.email,
-        role: value.role,
-      
-      }
-  
-      console.log('submit value since the service :', body);
-      this.http.post(this.url, body).subscribe((res) => {
-        console.log('res dans services', res)
-      });
+
+    add(reservations: any): Observable<any> {
+      console.log('entré du service :', reservations)
+      const headers = {
+        headers: new HttpHeaders({
+          'Authorization': 'Basic ' + btoa(this.username + ':' + this.password)
+        })
+      };
+      return this.http.post<any>(this.url, reservations, headers);
+      console.log('Sortie/ apres post du service :', reservations);
+    
+    }
+    
+    update(id: string, reservations: any){
+      const headers = {
+        headers: new HttpHeaders({
+          'Authorization': 'Basic'+ btoa(this.username + ':' + this.password)
+        })
+      };
+      return this.http.put<any>(this.url + '/' + reservations.id, reservations, headers);
+    }
+    
+    delete(id: string): Observable<any> {
+      const headers = {
+        headers: new HttpHeaders({
+          'Authorization': 'Basic ' + btoa(this.username + ':' + this.password)
+        })
+      };
+      return this.http.delete<any>(this.url + '/' + id, headers);
+    }
+    
+    getReservationsById(id: string): Observable<any> {
+      const headers = {
+        headers: new HttpHeaders({
+          'Authorization': 'Basic ' + btoa(this.username + ':' + this.password)
+        })
+      };
+      return this.http.get<any>(this.url + '/' + id, headers);
+    }
+    
+    getReservationsByName(name: string): Observable<any> {
+      const headers = {
+        headers: new HttpHeaders({
+          'Authorization': 'Basic ' + btoa(this.username + ':' + this.password)
+        })
+      };
+      return this.http.get<any>(this.url + '/name/' + name, headers);
     }
 
 
